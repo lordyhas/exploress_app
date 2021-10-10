@@ -36,6 +36,8 @@ class StyleAppTheme extends Cubit<ThemeData> {
 
   //get stylesTheme => stylesTheme;
 
+  String? a;
+
   void restoreTheme() async {
     //final SettingAppData  _settingData = (await objectBoxManager.getSettingDataBox)!;
     //print(" ObjectBox._initObjectBox(theme: ${_settingData!.theme}) ===  ===");
