@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "1021422010903",
+    "firebase_url": "https://exploress-aa508.firebaseio.com",
+    "project_id": "exploress-aa508",
+    "storage_bucket": "exploress-aa508.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021422010903:android:a49d73b05654e535a99252",
+        "android_client_info": {
+          "package_name": "com.lordyhas.exploress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021422010903-m1776oshj4mg4ug6bbqd87og71rhmt0c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lordyhas.exploress",
+            "certificate_hash": "658ba21454617f4a14bbf6aa51edb9bfd26f308a"
+          }
+        },
+        {
+          "client_id": "1021422010903-mkigifbldld0tc7ltubtbch0otp2v301.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2hum8BGZJZhXUzvEC23KP70besjww2tM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021422010903-mkigifbldld0tc7ltubtbch0otp2v301.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1021422010903-lg3n5t3blsf4k2lkgugjqtl7pkokk9ll.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lordyhas.exploress"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021422010903:android:e9acaeb13575c9aca99252",
+        "android_client_info": {
+          "package_name": "com.lordyhas.exploress.exshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021422010903-elishq32sfmn5h55qagpsv91bb6ibu3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lordyhas.exploress.exshop",
+            "certificate_hash": "658ba21454617f4a14bbf6aa51edb9bfd26f308a"
+          }
+        },
+        {
+          "client_id": "1021422010903-mkigifbldld0tc7ltubtbch0otp2v301.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2hum8BGZJZhXUzvEC23KP70besjww2tM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021422010903-mkigifbldld0tc7ltubtbch0otp2v301.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1021422010903-lg3n5t3blsf4k2lkgugjqtl7pkokk9ll.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lordyhas.exploress"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

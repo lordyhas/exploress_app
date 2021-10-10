@@ -1,0 +1,27 @@
+{
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "x": "__",
+  "title_app": "Exploress Manager",
+
+
+  "drawer_home": "Dashboard",
+  "drawer_validate": "Validate",
+  "drawer_publish": "Publish",
+  "drawer_message": "Message Chat",
+  "drawer_help": "Help",
+  "drawer_feedback": "FeedBack",
+  "drawer_invite": "Invite Friend",
+  "drawer_rate": "Rate & Share",
+  "drawer_about_us": "About Us",
+  "drawer_": "",
+
+  "help_question": "How can we help you?",
+  "help_issues": "It looks like you are experiencing problems with our sign up process or other issues. We are here to help so please get in touch with us",
+  "help_": "",
+
+  "x_": "",
+  "xxx": "xxx"
+}

@@ -1,0 +1,26 @@
+{
+  "helloWorld": "Bonjour le monde!",
+
+  "x": "__",
+  "title_app": "Exploress Manager",
+
+
+  "drawer_home": "Acceuil",
+  "drawer_validate": "Validez",
+  "drawer_publish": "Publier",
+  "drawer_message": "Message",
+  "drawer_help": "Aide",
+  "drawer_feedback": "FeedBack",
+  "drawer_invite": "Inviter un ami",
+  "drawer_rate": "Evaluer & Partager",
+  "drawer_about_us": "À propos ",
+  "drawer_": "",
+
+  "help_question": "Comment pouvons-nous vous aider?",
+   "help_issues": "Il semble que vous rencontriez des problèmes avec notre processus d'inscription ou d'autres problèmes. Nous sommes là pour vous aider, alors n'hésitez pas à nous contacter",
+   "help_": "",
+
+
+  "x_": "",
+  "xxx": "xxx"
+}
