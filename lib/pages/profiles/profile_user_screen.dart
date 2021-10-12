@@ -1,7 +1,7 @@
 part of '../profiles.dart';
 
 class ProfileUserScreen extends StatelessWidget {
-
+  const ProfileUserScreen();
 
   @override
   Widget build(BuildContext context) {

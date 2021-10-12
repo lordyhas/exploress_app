@@ -1,13 +1,14 @@
 import 'dart:ui';
 
 import 'package:exploress/data/app_database.dart';
-import 'package:exploress/data/database/DatabaseManager.dart';
+import 'package:exploress/data/database/database_manager.dart';
 import 'package:exploress/data/database/model/AppSettingModel.dart';
-import 'package:exploress/data/database/model/SettingData.dart';
+import 'package:exploress/data/database/model/setting_data.dart';
 import 'package:exploress_repository/exploress_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
+import 'package:utils_component/utils_component.dart';
 part 'colors.dart';
 
 

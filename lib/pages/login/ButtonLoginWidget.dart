@@ -119,16 +119,21 @@ class _GoogleLoginButton extends StatelessWidget {
     double width = MediaQuery.of(context).size.width *0.75;
     final theme = Theme.of(context);
 
-    Widget googleOutlineButton = OutlineButton(
+    Widget googleOutlineButton = OutlinedButton(
       onPressed: () => context.read<LoginCubit>().logInWithGoogle(),
       //BlocProvider.of<LoginCubit>(context).logInWithGoogle(),
-      color: theme.accentColor,
-      textColor: theme.accentColor,
-      highlightedBorderColor: theme.primaryColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-      borderSide: BorderSide(
-        color: theme.accentColor,
+      style: OutlinedButton.styleFrom(
+        primary: theme.accentColor,
+        textStyle: TextStyle(
+          fontWeight: FontWeight.w700,
+          color: theme.accentColor,
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+        side: BorderSide(
+          color: theme.accentColor,
+        ),
       ),
+
       child:  Container(
         child: Row(
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,

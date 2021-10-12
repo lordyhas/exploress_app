@@ -10,7 +10,7 @@ import 'package:objectbox/flatbuffers/flat_buffers.dart' as fb;
 import 'package:objectbox/internal.dart'; // generated code can access "internal" functionality
 import 'package:objectbox/objectbox.dart';
 
-import 'data/database/model/SettingData.dart';
+import 'data/database/model/setting_data.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
 

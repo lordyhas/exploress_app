@@ -26,7 +26,7 @@ class LoginForm extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: EdgeInsets.all(8.0).copyWith(),
+              padding: EdgeInsets.all(8.0).copyWith(top: 32),
               child: Image.asset(
                 'assets/img/exploress_icon.png',
                 height: 120,

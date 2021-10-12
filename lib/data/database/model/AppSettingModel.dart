@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-part 'AppSettingModel.g.dart';
+part 'app_setting_model.g.dart';
 
 @HiveType(typeId: 0)
 class AppSetting extends HiveObject {

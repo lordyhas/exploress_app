@@ -5,7 +5,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exploress/data/app_bloc_library.dart';
 import 'package:exploress/data/app_database.dart';
-import 'package:exploress/data/database/model/SettingData.dart';
+import 'package:exploress/data/database/model/setting_data.dart';
 import 'package:exploress/data/map_data/gps_location.dart';
 import 'package:exploress/data/values.dart';
 import 'package:exploress/pages/product/single_product_page.dart';
@@ -26,6 +26,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:utils_component/utils_component.dart';
 import 'package:shimmer/shimmer.dart';
 
 import 'login/signup_and_login.dart';

@@ -7,7 +7,7 @@ export 'widget_model/TitledBottomNavigationBar.dart';
 export 'widget_model/ViewPagerSlide.dart';
 export 'widget_model/NodataWidget.dart';
 export 'widget_model/StarRating.dart';
-export 'widget_model/BooleanBuilder.dart';
+//export 'widget_model/BooleanBuilder.dart';
 
 //export 'widget_model/ProductCardWidget.dart';
 //export '';

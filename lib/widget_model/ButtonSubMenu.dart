@@ -7,6 +7,7 @@ import 'package:exploress/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:utils_component/utils_component.dart';
 import 'BooleanBuilder.dart';
 //enum SubListType{home, shop, product, more, option}
 enum SubListType{shop, product, more, restaurant}

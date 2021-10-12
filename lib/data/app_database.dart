@@ -1,3 +1,3 @@
 library exploress_database;
-export 'database/DatabaseManager.dart';
+export 'database/database_manager.dart';
 export 'package:exploress_repository/exploress_database.dart';

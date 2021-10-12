@@ -10,6 +10,7 @@ import 'package:exploress/data/values/strings.dart';
 import 'package:exploress/pages/profiles/maps_test.dart';
 import 'package:exploress/pages/settings_and_about/About.dart';
 import 'package:exploress/pages/settings_and_about/Settings.dart';
+import 'package:utils_component/utils_component.dart';
 import '../widgets.dart';
 import 'login/signup_and_login.dart';
 import 'package:exploress/pages/profiles/search/search_activity.dart';
