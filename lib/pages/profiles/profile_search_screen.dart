@@ -130,7 +130,9 @@ class _SearchScreenState extends State<SearchScreen> {
                                           return ClipRRect(
                                             borderRadius: BorderRadius.circular(8.0),
                                             child: Card(
-                                              //shape: ,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(10.0),
+                                              ),
                                               child: Container(
                                                 child: Column(
                                                   children: [
@@ -139,10 +141,20 @@ class _SearchScreenState extends State<SearchScreen> {
                                                           .copyWith(bottom: 16.0),
                                                       width: (MediaQuery.of(context).size.width) * 0.40,
                                                       height: 150,
-                                                      child: ClipRRect(
-                                                        borderRadius: BorderRadius.circular(10.0),
-                                                        child: Image.memory(product.image!.bytes),
-                                                        //Image.asset('assets/img/p1/product_${i + 1}.png'),
+                                                      child: DecoratedBox(
+                                                        decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.circular(10.0),
+                                                          border: Border.all(
+                                                            width: 0.7,
+                                                                color: Theme.of(context).primaryColorLight
+                                                          ),
+                                                          image: DecorationImage(
+                                                              image: MemoryImage(
+                                                                product.image!.bytes,
+                                                              ),
+                                                            fit: BoxFit.cover,
+                                                          )
+                                                        ),
                                                       ),
                                                     ),
                                                     Container(
@@ -174,8 +186,19 @@ class _SearchScreenState extends State<SearchScreen> {
                                           height: 80,
                                           width: (MediaQuery.of(context).size.width)*0.92,
                                           child: Card(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(10.0),
+                                            ),
                                             child: ListTile(
                                               leading: Card(
+                                                elevation: 0.0,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(10.0),
+                                                  side: BorderSide(
+                                                    width: .5,
+                                                    color: Theme.of(context).primaryColorLight,
+                                                  )
+                                                ),
                                                 child: Image.memory(product.image!.bytes,
                                                   //height: 75,
                                                   //width: 75,

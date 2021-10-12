@@ -152,7 +152,7 @@ class _SettingState extends State<SettingPage>{
                             color: iconColor,
                           ),
                           title: Text(text['my_account'],style: textStyleSet),
-                          trailing: Icon(Icons.arrow_right),
+                          trailing: const Icon(Icons.arrow_right),
                           onTap: (){
                             switch (BlocProvider
                                 .of<AuthenticationBloc>(context)
@@ -192,11 +192,8 @@ class _SettingState extends State<SettingPage>{
                               onChanged: (v) {
                                 setState(() {
                                   darkModeValue = !darkModeValue;
-                                  /*if(darkModeValue)
-                                    hiveBoxManager.updateTheme(StylesThemeState.dark);
-                                  else hiveBoxManager.updateTheme(StylesThemeState.light);*/
                                 });
-                                /*setState(() {
+                                /**setState(() {
                                   darkModeValue = !darkModeValue;
                                   if(darkModeValue)
                                     obm.updateTheme(StylesThemeState.dark);

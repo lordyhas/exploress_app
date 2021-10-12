@@ -12,7 +12,7 @@ import 'package:exploress/pages/product/single_product_page.dart';
 import 'package:exploress/pages/profiles.dart';
 import 'package:exploress/pages/product/quick_single_product.dart';
 import 'package:exploress/pages/settings_and_about/About.dart';
-import 'package:exploress/pages/settings_and_about/Settings.dart';
+import 'package:exploress/pages/settings_and_about/settings.dart';
 import 'package:exploress/pages/shop/filters_screen.dart';
 import 'package:exploress/pages/splash_page.dart';
 import 'package:exploress/widget_model/BooleanBuilder.dart';

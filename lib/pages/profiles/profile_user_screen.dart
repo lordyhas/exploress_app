@@ -14,19 +14,22 @@ class ProfileUserScreen extends StatelessWidget {
 
             return Scaffold(
               ///extendBodyBehindAppBar: true,
-              appBar: AppBar(
-                ///backgroundColor: Colors.transparent,
-                elevation: 0.0,
-                centerTitle: true,
-                title: Text("Profile"),
-                actions: [
-                  IconButton(icon: Icon(Icons.message), onPressed: (){}),
-                  IconButton(icon: Icon(Icons.notifications), onPressed: (){}),
-                ],
-              ),
               body: NestedScrollView(
                 headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
                   return <Widget>[
+                    SliverAppBar(
+                      ///backgroundColor: Colors.transparent,
+                      snap:false,
+                      floating: true,
+                      pinned: false,
+                      elevation: 0.0,
+                      centerTitle: true,
+                      title: Text("Profile"),
+                      actions: [
+                        IconButton(icon: Icon(Icons.message), onPressed: (){}),
+                        IconButton(icon: Icon(Icons.notifications), onPressed: (){}),
+                      ],
+                    ),
 
                     SliverOverlapAbsorber(
                       handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
