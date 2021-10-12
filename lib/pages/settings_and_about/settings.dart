@@ -12,8 +12,6 @@ import 'package:package_info/package_info.dart';
 
 import 'About.dart';
 
-
-
 class SettingPage extends StatefulWidget{
 
   static Route route() {
