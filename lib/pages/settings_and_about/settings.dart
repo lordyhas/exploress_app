@@ -1,4 +1,4 @@
-import 'package:exploress/pages/home_page.dart';
+
 import 'package:exploress/data/app_database.dart';
 import 'package:exploress/data/app_bloc_library.dart';
 import 'package:exploress/data/values.dart';
@@ -7,7 +7,7 @@ import 'package:exploress/pages/profiles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
+
 import 'package:package_info/package_info.dart';
 
 import 'About.dart';
@@ -61,8 +61,8 @@ class _SettingState extends State<SettingPage>{
 
   initPlatform() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    String appName = packageInfo.appName;
-    String packageName = packageInfo.packageName;
+    //String appName = packageInfo.appName;
+    //String packageName = packageInfo.packageName;
     setState(() {
       version = packageInfo.version;
       buildNumber = packageInfo.buildNumber;
@@ -320,11 +320,11 @@ class _SettingState extends State<SettingPage>{
                                 title: Text("Sorry", style: Theme.of(context).textTheme.bodyText2),
                                 content: Text("Oups! this functionality is not available in your region"),
                                 actions: [
-                                  FlatButton(
+                                  TextButton(
                                       onPressed: (){ Navigator.pop(context); },
                                       child: Text('Remember me when', style: TextStyle(color: iconColor))
                                   ),
-                                  FlatButton(
+                                  TextButton(
                                       onPressed: (){ Navigator.pop(context); },
                                       child: Text('Cancel', style: TextStyle(color: iconColor))
                                   ),
