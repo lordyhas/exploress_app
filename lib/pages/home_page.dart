@@ -11,7 +11,7 @@ import 'package:exploress/data/values.dart';
 import 'package:exploress/pages/product/single_product_page.dart';
 import 'package:exploress/pages/profiles.dart';
 import 'package:exploress/pages/product/quick_single_product.dart';
-import 'package:exploress/pages/settings_and_about/About.dart';
+import 'package:exploress/pages/settings_and_about/about.dart';
 import 'package:exploress/pages/settings_and_about/settings.dart';
 import 'package:exploress/pages/shop/filters_screen.dart';
 import 'package:exploress/pages/splash_page.dart';
@@ -38,7 +38,7 @@ part 'home_page/HomeScreen.dart';
 
 
 class HomePage extends StatefulWidget  {
-  HomePage({Key? key,}) : super(key: key);
+  const HomePage({Key? key,}) : super(key: key);
 
   static Route route() {
     //if(kIsWeb) return MaterialPageRoute<void>(builder: (_) => HomePage());
@@ -200,7 +200,7 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
   Widget build(BuildContext context) {
     _initPosition();
 
-    return HomeScreen();
+    return const HomeScreen();
   }
 
 //Drawer drawer = drawerWidget();

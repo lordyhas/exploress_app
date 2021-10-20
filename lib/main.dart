@@ -72,8 +72,9 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({
-    Key? key,
     required this.authenticationRepository,
+    Key? key,
+
   }) : super(key: key);
 
   final AuthenticationRepository authenticationRepository;
@@ -86,13 +87,14 @@ class MyApp extends StatelessWidget {
         create: (_) => AuthenticationBloc(
           authenticationRepository: authenticationRepository,
         ),
-        child: AppView(),
+        child: const AppView(),
       ),
     );
   }
 }
 
 class AppView extends StatefulWidget {
+  const AppView({Key? key}) : super(key: key);
   @override
   _AppViewState createState() => _AppViewState();
 }
@@ -164,7 +166,7 @@ class _AppViewState extends State<AppView> {
             debugShowCheckedModeBanner: false,
             theme: theme,
             title: 'Exploress Soko',
-            home: DefaultPage(),
+            home: const DefaultPage(),
           ),
           ifFalse: MaterialApp(
             navigatorKey: _navigatorKey,

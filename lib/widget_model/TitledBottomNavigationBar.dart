@@ -164,5 +164,5 @@ class ItemNavigationBar {
   final String title;
   final IconData icon;
 
-  ItemNavigationBar(this.title, this.icon);
+  const ItemNavigationBar(this.title, this.icon);
 }

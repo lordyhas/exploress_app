@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:package_info/package_info.dart';
 
-import 'About.dart';
+import 'about.dart';
 
 class SettingPage extends StatefulWidget{
 
@@ -111,7 +111,7 @@ class _SettingState extends State<SettingPage>{
     TextStyle textStyleSet = Theme.of(context).textTheme.bodyText2!
         .copyWith(fontSize: 17, fontWeight: FontWeight.bold);
     //TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
-    TextStyle textStyleBet = TextStyle(color:iconColor, fontSize: 18);
+    final TextStyle textStyleBet = TextStyle(color:iconColor, fontSize: 18);
 
     dropdownValue = languageList[0];
      return WillPopScope(
@@ -337,7 +337,7 @@ class _SettingState extends State<SettingPage>{
 
                   /// Synchronisation ######
                   Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Text(text['set_sync_title'],
                       style: textStyleBet,
                     ),
@@ -403,7 +403,7 @@ class _SettingState extends State<SettingPage>{
                             color: iconColor,
                           ),
                           title: Text("Address & Location",style: textStyleSet),
-                          trailing: Icon(Icons.arrow_right),
+                          trailing: const Icon(Icons.arrow_right),
                         )
                       ],
                     ),
@@ -421,7 +421,7 @@ class _SettingState extends State<SettingPage>{
                     //color: Colors.white54,
                     elevation: 4.0,
                     child: Container(
-                      padding: EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(left: 10),
                       child: Column(
                         children: <Widget>[
                           ListTile(
@@ -441,7 +441,7 @@ class _SettingState extends State<SettingPage>{
                           ),
                           ListTile(
                             title: Text(text['about_exploress_app'],style: textStyleSet,),
-                            trailing: Icon(Icons.arrow_right),
+                            trailing: const Icon(Icons.arrow_right),
                             onTap: (){
                               SystemChrome.setSystemUIOverlayStyle(
                                   SystemUiOverlayStyle(
@@ -462,7 +462,7 @@ class _SettingState extends State<SettingPage>{
                       ),
                     ),
                   ),
-                  SizedBox(height: 24.0,)
+                  const SizedBox(height: 24.0,)
                 ],
               ),
             ),

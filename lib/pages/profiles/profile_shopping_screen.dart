@@ -2,6 +2,7 @@ part of '../profiles.dart';
 
 
 class ShoppingScreen extends StatefulWidget {
+  const ShoppingScreen({Key? key}) : super(key: key);
   @override
   _ShoppingScreenState createState() => _ShoppingScreenState();
 }
@@ -217,22 +218,22 @@ class _DismissReservedListState extends State<DismissReservedList> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        Container(
+                        const SizedBox(
                           height: 30,
                           width: 20,
                           child:  Placeholder(),
                         ),
-                        Container(
+                        const SizedBox(
                           height: 30,
                           width: 20,
                           child:  Placeholder(),
                         ),
-                        Container(
+                        const SizedBox(
                           height: 30,
                           width: 20,
                           child:  Placeholder(),
                         ),
-                        Container(
+                         const SizedBox(
                           height: 30,
                           width: 20,
                           child:  Placeholder(),
@@ -243,8 +244,8 @@ class _DismissReservedListState extends State<DismissReservedList> {
                 ),
               ),
               Text(prods[index].productName),
-              Text("\nTest test test test test test"),
-              Text("With regards to this project, each group is "
+              const Text("\nTest test test test test test"),
+              const Text("With regards to this project, each group is "
                   "required to choose an organisation/company/entity in "
                   "theirsurroundings and consider their digital landscape. "
                   "You must consider the needs and requirements."),
@@ -264,7 +265,7 @@ class _DismissReservedListState extends State<DismissReservedList> {
       colorVal  = Theme.of(context).primaryColor;
     else colorVal  = Theme.of(context).primaryColorLight;
     return ListView.separated(
-      padding: EdgeInsets.only(top: 52,),
+      padding: const EdgeInsets.only(top: 52,),
       itemCount: products.length,
       separatorBuilder: (context, index){
         return Container(); //Divider(indent: 32,endIndent: 32,);
@@ -293,7 +294,7 @@ class _DismissReservedListState extends State<DismissReservedList> {
                 });
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    duration: Duration(seconds: 7),
+                    duration: const Duration(seconds: 7),
                     content: Text(dir == DismissDirection.startToEnd
                         ? '${item.productName} removed.'
                         : '${item.productName} finished.'),
@@ -314,13 +315,13 @@ class _DismissReservedListState extends State<DismissReservedList> {
               // Show a red background as the item is swiped away
               background: Container(
                 //width: 200,
-                padding: EdgeInsets.only(left: 8.0),
+                padding: const EdgeInsets.only(left: 8.0),
                 color: Colors.red,
                 child: Row(
                   children: [
-                    Icon(Icons.delete_forever_outlined, size: 52),
-                    SizedBox(width: 4.0,),
-                    Text('Cancel',
+                    const Icon(Icons.delete_forever_outlined, size: 52),
+                    const SizedBox(width: 4.0,),
+                    const Text('Cancel',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -334,20 +335,20 @@ class _DismissReservedListState extends State<DismissReservedList> {
               /// Background when swipping from right to left
               secondaryBackground: Container(
                 //width: 200,
-                padding: EdgeInsets.only(right: 8.0),
+                padding : const EdgeInsets.only(right: 8.0),
                 color: Colors.green,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text('Already',
+                    const Text('Already',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
                     ),
-                    SizedBox(width: 4.0,),
-                    Icon(Icons.check_circle_outline, size: 52),
+                    const SizedBox(width: 4.0,),
+                    const Icon(Icons.check_circle_outline, size: 52),
                   ],
                 ),
                 alignment: Alignment.centerRight,
@@ -367,9 +368,9 @@ class _DismissReservedListState extends State<DismissReservedList> {
                         },*/
                         key: Key(item.productCode),
                         trailing: (reservedList[index].isReserved)
-                            ? Icon(Icons.done, color: Colors.grey,)
-                            : Icon(Icons.done_all,color: colorVal  ),
-                        leading: Icon(Icons.shopping_cart_outlined),
+                            ? const Icon(Icons.done, color: Colors.grey,)
+                            :  Icon(Icons.done_all,color: colorVal  ),
+                        leading: const Icon(Icons.shopping_cart_outlined),
                         title: Text("${products[index].productName}",
                             style: Theme.of(context)
                                 .textTheme
@@ -383,7 +384,7 @@ class _DismissReservedListState extends State<DismissReservedList> {
                             Row(
                               children: [
                                 Container(
-                                  margin: EdgeInsets.only(right: 8.0),
+                                  margin: const EdgeInsets.only(right: 8.0),
                                   height: 80,
                                   width: 80,
                                   decoration: BoxDecoration(
@@ -402,7 +403,6 @@ class _DismissReservedListState extends State<DismissReservedList> {
                                 Expanded(
                                   child: Container(
                                     height: 80,
-
                                     child: ListTile(
 
                                       title: RichText(

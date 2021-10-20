@@ -51,18 +51,16 @@ class _AboutState extends State<AboutPage>{
     setState(() {
       appVersion = packageInfo.version;
     });
-    String appName = packageInfo.appName;
-    String packageName = packageInfo.packageName;
+    //String appName = packageInfo.appName;
+    //String packageName = packageInfo.packageName;
     //appVersion = packageInfo.version;
-    String buildNumber = packageInfo.buildNumber;
+    //String buildNumber = packageInfo.buildNumber;
   }
 
   Future<bool> _willPop(){
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(
           systemNavigationBarColor: Theme.of(context).primaryColor,
-
-
         )
     );
     return Future.value(true);
@@ -72,7 +70,6 @@ class _AboutState extends State<AboutPage>{
   @override
   Widget build(BuildContext context) {
     text =  BlocProvider.of<LanguageBloc>(context).state.strings;
-
 
     return WillPopScope(
       onWillPop: _willPop,
@@ -84,12 +81,10 @@ class _AboutState extends State<AboutPage>{
           elevation: 0.0,
           centerTitle: true,
           leading: Ink(
-            decoration: BoxDecoration(
-
-            ),
+            decoration: const BoxDecoration(),
             child: IconButton(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: Icon(Icons.close, size: 28,),
+              onPressed: Navigator.of(context).pop,
+              icon: const Icon(Icons.close, size: 28,),
               color: Theme.of(context).primaryColorDark,
             ),
           ),
@@ -114,9 +109,9 @@ class _AboutState extends State<AboutPage>{
     var textSettingsStyle = TextStyle(color: Colors.blue[600]);
 
     return ListView(
-      padding: EdgeInsets.only(left: 5.0, right: 5.0,),
+      padding: const EdgeInsets.only(left: 5.0, right: 5.0,),
       children: <Widget>[
-        SizedBox(height: 82,),
+        const SizedBox(height: 82,),
         Card(
           //color: background2,
           child: Column(
@@ -132,7 +127,7 @@ class _AboutState extends State<AboutPage>{
                       color: Theme.of(context).primaryColor,
                       fontSize: 24),
                 ),
-                Text("@lordyhas7",),
+                const Text("@lordyhas7",),
 
               ],),),
               /*ListTile(
@@ -147,25 +142,25 @@ class _AboutState extends State<AboutPage>{
 
               ),*/
               ListTile(
-                leading: Icon(Icons.info),
+                leading: const Icon(Icons.info),
                 title: Text("Version", style: primaryTextStyle20,),
                 subtitle: Text("$appVersion (non-stable)",),
 
               ),
               ListTile(
-                leading: Icon(Icons.update),
+                leading: const Icon(Icons.update),
                 title: Text(text['about_update'], style: primaryTextStyle20,),
                 subtitle: Text("${timeUpdate.subtract(Duration(days: 35, hours: 1))}",
                 ),
 
               ),
               ListTile(
-                leading: Icon(Icons.sync),
+                leading: const Icon(Icons.sync),
                 title: Text("Changelog",style: primaryTextStyle20,),
               ),
 
               ListTile(
-                leading: Icon(Icons.turned_in_not),
+                leading: const Icon(Icons.turned_in_not),
                 title: Text(text['about_licence'],style: primaryTextStyle20,),
               ),
             ],
@@ -181,18 +176,18 @@ class _AboutState extends State<AboutPage>{
                   title: Text(text['about_author'],style: textSettingsStyle,),
               ),
               ListTile(
-                leading: Icon(FontAwesomeIcons.user),
+                leading: const Icon(FontAwesomeIcons.user),
                 title: Text("Hassan K.",style: primaryTextStyle20,),
-                subtitle: Text("dev.haspro@gmail.com",),
+                subtitle: const Text("dev.haspro@gmail.com",),
 
               ),
               ListTile(
-                leading: Icon(FontAwesomeIcons.googlePlay),
+                leading: const Icon(FontAwesomeIcons.googlePlay),
                 title: Text("Play Store",style: primaryTextStyle20,),
               ),
 
               ListTile(
-                leading: Icon(Icons.group_outlined),
+                leading: const Icon(Icons.group_outlined),
                 title: Text("Our team",style: primaryTextStyle20,),
               ),
             ],
@@ -202,19 +197,18 @@ class _AboutState extends State<AboutPage>{
           //color: background2,
           child: Column(
             children: <Widget>[
-
               ListTile(
                 title: Text(text['about_company'],style: textSettingsStyle,),
               ),
               ListTile(
-                leading: Icon(Icons.business),
+                leading: const Icon(Icons.business),
                 title: Text("KDynamic Inc.",style: primaryTextStyle20,),
-                subtitle: Text("Mobile App Developers ",),
+                subtitle: const Text("Mobile App Developers ",),
               ),
               ListTile(
-                leading: Icon(Icons.location_on),
+                leading: const Icon(Icons.location_on),
                 title: Text(text['about_add'],style: primaryTextStyle20,),
-                subtitle: Text("None ",),
+                subtitle: const Text("None ",),
               ),
 
             ],

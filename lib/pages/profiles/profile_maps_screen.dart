@@ -1,6 +1,7 @@
 part of '../profiles.dart';
 
 class MapScreen extends StatefulWidget {
+  const MapScreen({Key? key}) : super(key: key);
   @override
   _MapScreenState createState() => _MapScreenState();
 }
@@ -24,57 +25,55 @@ class _MapScreenState extends State<MapScreen> {
               )
             ),
           ),
-          Container(
-            child: Column(
-              children: [
-                /// AppBar ===========
-                AppBar(
-                  title: Text("Maps"),
-                ),
-                /// Body ==============
+          Column(
+            children: [
+              /// AppBar ===========
+              AppBar(
+                title: const Text("Maps"),
+              ),
+              /// Body ==============
 
-                Expanded(
-                  child: Container(
-                    child: Center(
-                      child: Container(
-                        height: 250,
-                        child: Column(
-                          children: [
-                            Container(
-                                child: Icon(
-                                  Icons.map,
-                                  size: 150,
-                                  color: Theme.of(context).primaryColorLight,
-                                )
+              Expanded(
+                child: Container(
+                  child: Center(
+                    child: Container(
+                      height: 250,
+                      child: Column(
+                        children: [
+                          Container(
+                              child: Icon(
+                                Icons.map,
+                                size: 150,
+                                color: Theme.of(context).primaryColorLight,
+                              )
+                          ),
+
+                          const Text("Local Maps", style: TextStyle(
+                              color: Colors.black54)
+                            ,),
+                          OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              primary: Theme.of(context).primaryColorLight,
+                              side: BorderSide(
+                                color: Theme.of(context).primaryColorLight,
+                              )
                             ),
+                            child: Container(
+                                width: 100,
+                                alignment: Alignment.center,
+                                child: const Text("Explorer Maps")
+                            ),
+                            onPressed: () => Navigator.push(
+                                context, MapSample.route()) ,
 
-                            Text("Local Maps", style: TextStyle(
-                                color: Colors.black54)
-                              ,),
-                            OutlinedButton(
-                              style: OutlinedButton.styleFrom(
-                                primary: Theme.of(context).primaryColorLight,
-                                side: BorderSide(
-                                  color: Theme.of(context).primaryColorLight,
-                                )
-                              ),
-                              child: Container(
-                                  width: 100,
-                                  alignment: Alignment.center,
-                                  child: Text("Explorer Maps")
-                              ),
-                              onPressed: () => Navigator.push(
-                                  context, MapSample.route()) ,
-
-                            )
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ],
       ),

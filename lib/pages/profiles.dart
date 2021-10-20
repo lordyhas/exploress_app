@@ -8,7 +8,7 @@ import 'package:exploress/data/app_database.dart';
 import 'package:exploress/data/values.dart';
 import 'package:exploress/data/values/strings.dart';
 import 'package:exploress/pages/profiles/maps_test.dart';
-import 'package:exploress/pages/settings_and_about/About.dart';
+import 'package:exploress/pages/settings_and_about/about.dart';
 import 'package:exploress/pages/settings_and_about/settings.dart';
 import 'package:utils_component/utils_component.dart';
 import '../widgets.dart';
@@ -161,12 +161,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.symmetric(),
+                          margin: const EdgeInsets.symmetric(),
                           height: 200,
                           child: Image
                                 .asset('assets/img/vector/login_vector.png')
                         ),
-                        Spacer(flex: 2,),
+                        const Spacer(flex: 2,),
                         Text("You don't have an account",
                           style: TextStyle(
                             color: Theme.of(context).accentColor,
@@ -175,7 +175,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         ButtonBar(
                           //: EdgeInsets.symmetric(horizontal: 8.0),
                           alignment: MainAxisAlignment.center,
@@ -183,7 +183,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             OutlinedButton(
                               style: OutlinedButton.styleFrom(
                                 primary: Theme.of(context).primaryColorLight,
-                                shape: StadiumBorder(),
+                                shape: const StadiumBorder(),
                                 side: BorderSide(
                                     width: 3.0,
                                     color: Theme.of(context).primaryColorLight,
@@ -192,16 +192,16 @@ class _ProfilePageState extends State<ProfilePage> {
                               onPressed: (){
                                 Navigator.pushReplacement(context, LoginPage.route());
                               },
-                              child: Text("   Sign in   ",
+                              child: const Text("   Sign in   ",
                                 style: TextStyle(fontWeight: FontWeight.bold ),
                               ),
                             ),
 
-                            SizedBox(width: 16.0,),
+                            const SizedBox(width: 16.0,),
                             OutlinedButton(
                               style: OutlinedButton.styleFrom(
                                 primary: Theme.of(context).primaryColor,
-                                shape: StadiumBorder(),
+                                shape: const StadiumBorder(),
                                 side: BorderSide(
                                   width: 3.0,
                                   color: Theme.of(context).primaryColor,
@@ -210,7 +210,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               onPressed: (){
                                 Navigator.pop(context);
                               },
-                              child: Text("Remember me later",
+                              child: const Text("Remember me later",
                                 style: TextStyle(fontWeight: FontWeight.bold ),
                               ),
                             ),
@@ -244,10 +244,10 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
   List<Widget> _screens = <Widget>[
-    ProfileUserScreen(),
-    ShoppingScreen(),
-    SearchScreen(),
-    MapScreen(),
+    const ProfileUserScreen(),
+    const ShoppingScreen(),
+    const SearchScreen(),
+    const MapScreen(),
   ];
 
 
@@ -260,10 +260,10 @@ class _ProfilePageState extends State<ProfilePage> {
 
   TitledBottomNavigationBar titledBottomNavigationBar() {
     final itemsBottomBar = <ItemNavigationBar>[
-      ItemNavigationBar('My Profile', FontAwesomeIcons.user),
-      ItemNavigationBar('Shopping', FontAwesomeIcons.shoppingCart),
-      ItemNavigationBar('Search', FontAwesomeIcons.search),
-      ItemNavigationBar('Maps', FontAwesomeIcons.mapMarked),
+      const ItemNavigationBar('My Profile', FontAwesomeIcons.user),
+      const ItemNavigationBar('Shopping', FontAwesomeIcons.shoppingCart),
+      const ItemNavigationBar('Search', FontAwesomeIcons.search),
+      const ItemNavigationBar('Maps', FontAwesomeIcons.mapMarked),
     ];
     return TitledBottomNavigationBar(
       textColor: Colors.white,
