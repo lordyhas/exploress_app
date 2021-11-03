@@ -228,7 +228,7 @@ packages:
   exploress_repository:
     dependency: "direct main"
     description:
-      path: "../packages/exploress_repository"
+      path: "../packages/exploress_packages"
       relative: true
     source: path
     version: "0.0.1"
@@ -259,21 +259,21 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.3"
+    version: "1.4.1"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
       name: firebase_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.1"
+    version: "4.3.1"
   firebase_auth_web:
     dependency: transitive
     description:
       name: firebase_auth_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.2"
+    version: "1.3.1"
   firebase_core:
     dependency: "direct main"
     description:
@@ -960,9 +960,11 @@ packages:
   utils_component:
     dependency: "direct main"
     description:
-      path: "../packages/utils_component"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "5c3522b19ebd2a09222525b1d564af0193871daa"
+      url: "https://github.com/lordyhas/utils_component"
+    source: git
     version: "0.0.1"
   vector_math:
     dependency: transitive

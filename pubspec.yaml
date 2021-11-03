@@ -70,9 +70,10 @@ dependencies:
   permission_handler: ^8.1.6
 
   exploress_repository:
-    path: ../packages/exploress_repository
+    path: ../packages/exploress_packages
   utils_component:
-    path: ../packages/utils_component
+    git:
+      url: https://github.com/lordyhas/utils_component
 
   #exploress_repository:
     #git:

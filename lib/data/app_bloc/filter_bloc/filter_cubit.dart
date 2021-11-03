@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:exploress_repository/exploress_repository.dart';
 
 import '../../category.dart';
 
