@@ -9,7 +9,7 @@ import 'package:exploress/data/database/model/AppSettingModel.dart';
 import 'package:exploress/data/values.dart';
 
 import 'package:exploress/pages/splash_page.dart';
-import 'package:exploress/widget_model/BooleanBuilder.dart';
+//import 'package:exploress/widget_model/BooleanBuilder.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +17,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hive/hive.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:utils_component/utils_component.dart';
 //import 'package:flutter_localizations/flutter_localizations.dart';
 //import 'package:intl/intl.dart';
@@ -161,7 +159,7 @@ class _AppViewState extends State<AppView> {
       ],
       child: BlocBuilder<StyleAppTheme, ThemeData>(builder: (_, theme) {
         return BooleanBuilder(
-          check: DateTime.now().isAfter(DateTime(2021,12,02,18,00,00)),
+          check: DateTime.now().isAfter(DateTime(2022,10,30,18,00,00)),
           ifTrue: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: theme,
