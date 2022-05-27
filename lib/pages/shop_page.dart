@@ -6,12 +6,14 @@ import 'package:exploress/data/app_database.dart';
 import 'package:exploress/data/values.dart';
 import 'package:exploress/data/values/styles.dart';
 import 'package:exploress/pages/shop/quick_single_shop.dart';
+import 'package:exploress/pages/shop/shop_info_screen.dart';
 import 'package:exploress_repository/exploress_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
+import '../data_test.dart';
 import 'shop/calendar_popup_view.dart';
 import 'shop/shop_list_view.dart';
 import 'shop/model/shop_list_data.dart';
@@ -41,21 +43,9 @@ class _ShopPageState extends State<ShopPage> {
   Widget build(BuildContext context) {
     var position = BlocProvider.of<MapsBloc>(context).state.maps;
 
-    List<ShopData> shops = [
-      ShopData(
-        shopName: "Prostyle 243",
-        shopCode: "prostyle123",
-        imagePath: "assets/img/shop_image/shop (1).jpeg",
-        email: 'prostyle243@gmail.com',
-        rating: (3+3+4+5+2),
-        rater: 5,
-        phoneNumber: "+243 998731145",
-        phoneNumber2: "+243 848731145",
-        location: maps.LatLng(-11.6284708, 27.487585),
-      ),
-    ];
 
-    List<ShopItemData> shopItemList = shops.map((shop) =>
+
+    List<ShopItemData> shopItemList = DataTest.shops.map((shop) =>
         ShopItemData(
           imagePath: shop.imagePath!,
           titleTxt: shop.shopName,
@@ -72,7 +62,7 @@ class _ShopPageState extends State<ShopPage> {
           perNight: 180,
           shop: shop,
         ),).toList();
-    shopItemList.addAll(ShopItemData.sampleList);
+    //shopItemList.addAll(ShopItemData.sampleList);
     return ShopHomeScreen(shopList: shopItemList);
   }
 

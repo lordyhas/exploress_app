@@ -29,7 +29,11 @@ class ShopHomeScreen extends StatelessWidget {
       return Future.value(true);
       //return Future.value(true);
     }*/
-
+    void onMapClickOpenPage(int index){
+      Navigator.push(context, MapSample.route(
+        initialPosition: shopList[index].shop?.location,
+      ));
+    }
     return Scaffold(
       //backgroundColor: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.9),
       body: Column(
@@ -96,7 +100,7 @@ class ShopHomeScreen extends StatelessWidget {
                               //heroTag: shopData.shopCode+"$index",
                               onShopClick: () {
                                 if(index==0)
-                                Navigator.push(context, QuickSingleShop.route(
+                                Navigator.push(context, ShopInfoScreen.route(
                                     shop: shopList.first.shop!,
                                     onMapClick: (){
                                       Navigator.push(context, MapSample.route(
@@ -105,13 +109,19 @@ class ShopHomeScreen extends StatelessWidget {
                                     }
 
                                 ));
+
+                                else if(index==1)
+                                  Navigator.push(context, ShopInfoScreen.route(
+                                      shop: shopList[index].shop!,
+                                      onMapClick: (){
+                                        Navigator.push(context, MapSample.route(
+                                          initialPosition: shopList[index].shop?.location,
+                                        ));
+                                      }
+
+                                  ));
                               },
-                              onHueClick: (){
-                                if(index==0)
-                                Navigator.push(context, MapSample.route(
-                                  initialPosition: shopList[0].shop?.location,
-                                ));
-                              },
+                              onHueClick: () => onMapClickOpenPage(index),
                               onLikeClick: () {  },
 
                               shopItem: shopList[index],

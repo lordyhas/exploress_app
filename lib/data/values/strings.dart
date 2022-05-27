@@ -121,7 +121,14 @@ class Strings {
       "cat_furniture" : "Meubles",
       "cat_" : "",
 
-
+      "drawer_home": "Acceuil",
+      "drawer_shop": " Boutiques",
+      "drawer_prod": "Produits",
+      "drawer_restaurant": "Restaurant",
+      "drawer_setting": "Paramètre",
+      "drawer_hotel": "Hotel",
+      "drawer_about": "À propos",
+      "drawer_more": "Plus",
 
 
       "xxx":"",
@@ -204,6 +211,15 @@ class Strings {
       "cat_cuisine" : "Cuisine",
       "cat_furniture" : "Furniture",
       "cat_" : "",
+
+      "drawer_home": "Home",
+      "drawer_shop": "Shop",
+      "drawer_prod": "Product",
+      "drawer_restaurant": "Restaurant",
+      "drawer_setting": "Settings",
+      "drawer_hotel": "Hotel",
+      "drawer_about": "About",
+      "drawer_more":"More",
 
       'xxx': "",
 

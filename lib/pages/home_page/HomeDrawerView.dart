@@ -15,6 +15,8 @@ class DrawerView extends Drawer {
     required this.buttonSubMenuList
   }) : super(key: key, elevation: elevation, semanticLabel: semanticLabel);
 
+
+
   @override
   Widget build(BuildContext context) {
     text = BlocProvider.of<LanguageBloc>(context).state.getStrings();
@@ -92,11 +94,8 @@ class DrawerView extends Drawer {
                     ),
                   ),
 
-                  /*Container(
-                    child: ListTile(title: Text("Theme : $themeName", style: TextStyle(color: Colors.black)),),
-                  ),*/
 
-                  /*(context.bloc<AuthenticationBloc>().state.status == AuthenticationStatus.authenticated)
+                  /**(context.bloc<AuthenticationBloc>().state.status == AuthenticationStatus.authenticated)
                       ? Container(
                           margin: EdgeInsets.all(8.0),
                           child: Chip(
@@ -133,19 +132,33 @@ class DrawerView extends Drawer {
 
                         },
                       )),
+
                   Container(
+                      width: 100,
+                      child: ListTile(
+                        title: Text(
+                          text['drawer_shop'],
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColorLight),
+                        ),
+                        onTap: () {
+                          Navigator.push(context, ShopPage.route());
+
+                        },
+                      )),
+                  /*Container(
                       child: ButtonSubMenu(
                         title: "Shop",
                         subListType: SubListType.shop,
-                      )),
+                      )),*/
                   Container(
                       child: ButtonSubMenu(
-                        title: "Produit",
+                        title: text['drawer_prod'],
                         subListType: SubListType.product,
                       )),
                   Container(
                       child: ButtonSubMenu(
-                        title: "Restaurant",
+                        title: text['drawer_restaurant'],
                         subListType: SubListType.restaurant,
                       )),
 
@@ -153,7 +166,7 @@ class DrawerView extends Drawer {
                       width: 100,
                       child: ListTile(
                         title: Text(
-                          "Hotel",
+                          text['drawer_about'],
                           style: TextStyle(
                               color: Theme.of(context).primaryColorLight),
                         ),
@@ -195,7 +208,7 @@ class DrawerView extends Drawer {
                           color: Theme.of(context).primaryColorLight,
                         ),
                         title: Text(
-                          "About",
+                          text['drawer_about'],
                           style: TextStyle(
                               color: Theme.of(context).primaryColorLight),
                         ),

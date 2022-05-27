@@ -55,7 +55,7 @@ void main() async {
   print('StartApp: OK');
   /*String os = "=>";
   String osv;
-  if(kIsWeb) print('Platform detected => os: *** is Web OS ***');
+  if(kIsWeb) print('Pexport PATH="$PATH:`pwd`/flutter/bin"latform detected => os: *** is Web OS ***');
   else {
     os = Platform.operatingSystem;
     osv = Platform.operatingSystemVersion;

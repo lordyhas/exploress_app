@@ -2,6 +2,7 @@ import 'package:exploress/data/app_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:utils_component/utils_component.dart';
 
 
 
@@ -147,7 +148,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 42.0, right: 42.0),
+                        padding: EdgeInsets.only(left: 52.0, right: 52.0),
                         child: Card(
                           borderOnForeground: true,
                           color: Colors.transparent,
@@ -482,73 +483,49 @@ class _DetailProductPageState extends State<DetailProductPage> {
                 ),
               ),
             ),*/
-            (!kIsWeb)
-                ? _DraggableBottomSheet(
-                    childrenTitle: [
-                      Text("Description"),
-                      Text("Specification"),
-                      Text("Comment"),
-                      Text("Review")
-                    ],
-                    childrenBody: [
-                      /*Container(
+            BooleanBuilder(
+                check: !kIsWeb,
+                ifTrue: _DraggableBottomSheet(
+                  childrenTitle: [
+                    Text("Description"),
+                    Text("Specification"),
+                    Text("Comment"),
+                    Text("Review")
+                  ],
+                  childrenBody: [
+                    /*Container(
                         child: Markdown(
                           data:
 
                         ),
                       ),*/
-                      Container(
-                        child: Text( product.about ?? "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
-                            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \n"
-                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
-                            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. \n"
-                            "First replenish living. Creepeth image image. Creeping can't, won't called. Two fruitful let days "
-                            "signs sea together all land fly subdue."),
-                      ),
+                    Container(
+                      child: Text( product.about ?? "No information about product"),
+                    ),
 
-                      Container(
+                    Container(
+                      child: Center(
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
-                          "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-                          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \n"
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
-                          "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-                          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. \n"
-                          "First replenish living. Creepeth image image. Creeping can't, won't called. Two fruitful let days "
-                          "signs sea together all land fly subdue."
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
-                          "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-                          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \n"
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
-                          "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-                          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. \n"
-                          "First replenish living. Creepeth image image. Creeping can't, won't called. Two fruitful let days "
-                          "signs sea together all land fly subdue.",
-                          style: Theme.of(context).textTheme.bodyText2,
+                          "\nNo Specification for this product",
+                          style: TextStyle(fontSize: 20),
                         ),
                       ),
-                      Container(
-                        child: Text("'"),
+                    ),
+                    Container(
+                      child: Center(
+                        child: Text("\nNo comment",style: TextStyle(fontSize: 20),),
                       ),
-                      Container(
-                        color: Colors.red,
-                        child: Center(
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary : Colors.blue,
-                              textStyle: TextStyle(color: Colors.white)
+                    ),
+                    Container(
+                      height: 100,
+                      //color: Colors.red,
+                      child: Placeholder(),
+                    ),
+                  ],
+                ),
+                ifFalse: Container()
+            ),
 
-                            ),
-                            onPressed: () {},
-                            child: Text('Next'),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                : Container(),
           ],
         ),
       ),
@@ -723,7 +700,7 @@ class _DraggableBottomSheet extends StatelessWidget {
     return DraggableScrollableSheet(
       initialChildSize: 0.29,
       maxChildSize: 0.7,
-      minChildSize: 0.25,
+      minChildSize: 0.20,
       builder: (context, scrollController) {
         return Container(
           margin: EdgeInsets.only(bottom: 8.0, left: 4.0, right: 4.0),

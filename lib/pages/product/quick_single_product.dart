@@ -2,6 +2,7 @@ import 'package:exploress/data/app_bloc_library.dart';
 import 'package:exploress/data/app_database.dart';
 import 'package:exploress/pages/profiles/maps_test.dart';
 import 'package:exploress/pages/shop/quick_single_shop.dart';
+import 'package:exploress/pages/shop/shop_info_screen.dart';
 import 'package:exploress_repository/exploress_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +10,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart' as maps;
 import 'package:latlong2/latlong.dart' as dist;
 import 'package:utils_component/utils_component.dart';
+
+import '../../data_test.dart';
 
 
 class QuickSingleProductScreen extends StatefulWidget {
@@ -33,6 +36,7 @@ class QuickSingleProductScreen extends StatefulWidget {
 
 class _QuickSingleProductScreenState extends State<QuickSingleProductScreen> {
   bool likeActive = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -72,18 +76,7 @@ class ShowProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    var shop = ShopData(
-      shopName: "Prostyle 243",
-      shopCode: "prostyle123",
-      imagePath: "assets/img/shop_image/shop (1).jpeg",
-      email: 'prostyle243@gmail.com',
-      rating: (3+3+4+5+2),
-      rater: 5,
-      phoneNumber: "+243 998731145",
-      phoneNumber2: "+243 848731145",
-      location: maps.LatLng(-11.6284708, 27.487585),
-    );
+    final shop  = DataTest.shops.first;
 
     var position = BlocProvider.of<MapsBloc>(context).state.maps;
     var textStyle =
@@ -205,7 +198,7 @@ class ShowProductScreen extends StatelessWidget {
                           //minimumSize: ,
                         ),
                         onPressed: (){
-                          Navigator.push(context, QuickSingleShop.route(
+                          Navigator.push(context, ShopInfoScreen.route(
                               shop: shop,
                               onMapClick: (){
                                 Navigator.push(context, MapSample.route(

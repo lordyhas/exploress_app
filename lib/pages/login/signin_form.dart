@@ -91,7 +91,7 @@ class LoginForm extends StatelessWidget {
                 _FacebookLoginButton(text: "Login with Facebook",),
                 Spacer(flex: 2,),
 
-                _GoToSignUpPageTextButton(),
+                //_GoToSignUpPageTextButton(),
                 _ContinueWithOutButton(),
 
               ],),

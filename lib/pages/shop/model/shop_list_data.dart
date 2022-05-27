@@ -22,7 +22,7 @@ class ShopItemData {
   int perNight;
   ShopData? shop;
 
-  static List<ShopItemData> sampleList = <ShopItemData>[
+  /*static List<ShopItemData> sampleList = <ShopItemData>[
 
     ShopItemData(
       imagePath: 'assets/img/shop_image/shop (3).jpeg',
@@ -43,5 +43,5 @@ class ShopItemData {
       perNight: 200,
     ),
 
-  ];
+  ];*/
 }

@@ -21,6 +21,7 @@ class MapSample extends StatefulWidget {
 
 class _MapSampleState extends State<MapSample> {
   Completer<GoogleMapController> _controller = Completer();
+  MapType _mapType = MapType.normal;
 
   /*static final CameraPosition _kGooglePlex = CameraPosition(
     target: GPSLocation.myCurrentPosition().,
@@ -82,6 +83,12 @@ class _MapSampleState extends State<MapSample> {
 
   @override
   Widget build(BuildContext context) {
+    markers.add(Marker(
+      markerId: MarkerId("current_pos_marker"),
+      position: widget.initialPosition ?? LatLng(-10.6284708, 20.487585),
+      icon: BitmapDescriptor
+          .defaultMarkerWithHue(BitmapDescriptor.hueCyan),
+    ));
     return SafeArea(
       //top: false,
       child: new Scaffold(
@@ -95,7 +102,7 @@ class _MapSampleState extends State<MapSample> {
                   myLocationEnabled: true,
                   myLocationButtonEnabled: false,
                   compassEnabled: true,
-                  mapType: MapType.normal,
+                  mapType: _mapType,
                   initialCameraPosition: CameraPosition(
                       bearing: 192.8334901395799,
                       target: widget.initialPosition ?? snapshot.data!,
@@ -136,7 +143,17 @@ class _MapSampleState extends State<MapSample> {
                     icon: Icon(Icons.person_outline_outlined,),
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        if(_mapType != MapType.satellite){
+                          _mapType = MapType.satellite;
+                        }
+                        else if(_mapType == MapType.satellite){
+                          _mapType = MapType.normal;
+                        }
+                      });
+                    },
+                  color: (_mapType != MapType.satellite)? Colors.deepPurple: Colors.white,
                     icon: Icon(Icons.map,),
                 ),
               ],

@@ -52,7 +52,7 @@ class _RangeSliderViewState extends State<RangeSliderView> {
                     ),
                   ),
                   Expanded(
-                    flex: 1000 - _values.start.round(),
+                    flex: 1500 - _values.start.round(),
                     child: const SizedBox(),
                   ),
                 ],
@@ -72,7 +72,7 @@ class _RangeSliderViewState extends State<RangeSliderView> {
                     ),
                   ),
                   Expanded(
-                    flex: 1000 - _values.end.round(),
+                    flex: 1500 - _values.end.round(),
                     child: const SizedBox(),
                   ),
                 ],
@@ -87,10 +87,10 @@ class _RangeSliderViewState extends State<RangeSliderView> {
               //labels: RangeLabels("\$${_values.start}","\$${_values.end}"),
               values: _values,
               min: 0.0,
-              max: 1000.0,
+              max: 1500.0,
               activeColor: shopAppTheme.buildLightShopTheme.primaryColor,
               inactiveColor: Colors.grey.withOpacity(0.4),
-              divisions: 1000,
+              divisions: 1500,
               onChanged: (RangeValues values) {
                 try {
                   setState(() {

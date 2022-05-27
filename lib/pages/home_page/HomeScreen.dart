@@ -68,13 +68,7 @@ class _HomeScreenState extends State<HomeScreen>
     }
 
     _setSystemUIOverlayStyle();
-
-
-    //SystemChrome.restoreSystemUIOverlays();
-    //addToDatabase();
-    /* print(
-        'autoGenerateUniqueId :'
-        + ProductData().autoGenerateUniqueId("shop") + '=== ===');*/
+    
 
     text = BlocProvider.of<LanguageBloc>(context).state.getStrings();
     double maxSizeTitle = 750.0;
@@ -106,27 +100,6 @@ class _HomeScreenState extends State<HomeScreen>
         }, //() => Navigator.of(context).pop(true)
       ).show();
       return value;
-      /*return (await showDialog<bool>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text(
-            "Are you sure",
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
-          content: Text("Do you want to exit Exploress ?"),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: Text("No"),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(true);
-              },
-              child: Text("Yes"),
-            ),
-          ],
-        ))) ?? false;*/
     }
 
     var img = [
@@ -325,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen>
         ),
       ),
 
-      /*Container(
+      /**Container(
         //padding: EdgeInsets.symmetric(vertical: 16.0),
         child: Stack(
           alignment: Alignment.center,
@@ -751,7 +724,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             .copyWith(fontSize: 20)),
                                     trailing: Text("Previous | Next"),
                                   ),
-                                  ChargingWidget(isTendency: true,),
+                                  LoadingProductWidget(isTendency: true,),
                                 ],
                               ),
                             ),
@@ -804,12 +777,9 @@ class _HomeScreenState extends State<HomeScreen>
                                                   child: Stack(
                                                     children: [
                                                       Container(
-                                                        child: Hero(
-                                                          tag: product.productCode,
-                                                          child: ClipRRect(
-                                                            borderRadius: BorderRadius.circular(20),
-                                                            child: Image.memory(product.image!.bytes),
-                                                          ),
+                                                        child: ClipRRect(
+                                                          borderRadius: BorderRadius.circular(20),
+                                                          child: Image.memory(product.image!.bytes),
                                                         ),
                                                       ),
                                                       Container(
@@ -882,7 +852,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             .copyWith(fontSize: 20)),
                                     trailing: Text("Previous | Next"),
                                   ),
-                                  ChargingWidget(),
+                                  LoadingProductWidget(),
                                 ],
                               ),
                             ),
@@ -921,8 +891,8 @@ class _HomeScreenState extends State<HomeScreen>
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: snapshot.data!.map((product) =>
-                                              Hero(
-                                                tag: product.productCode,
+                                              SizedBox(
+                                                //tag: product.productCode,
                                                 child: InkWell(
                                                   onTap: (){
                                                     _setSystemUIForProductDesign();
@@ -1012,7 +982,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             .copyWith(fontSize: 20)),
                                     trailing: Text("Previous | Next"),
                                   ),
-                                  ChargingWidget(),
+                                  LoadingProductWidget(),
                                 ],
                               ),
                             ),
@@ -1037,7 +1007,7 @@ class _HomeScreenState extends State<HomeScreen>
                                       .copyWith(fontSize: 20)),
                               trailing: Text("Previous | Next"),
                             ),
-                            ChargingWidget(),
+                            LoadingProductWidget(),
                           ],
                         ),
                       ),
@@ -1061,9 +1031,9 @@ class _HomeScreenState extends State<HomeScreen>
 }
 
 
-class ChargingWidget extends StatelessWidget {
+class LoadingProductWidget extends StatelessWidget {
   final bool isTendency;
-  ChargingWidget({this.isTendency = false});
+  LoadingProductWidget({this.isTendency = false});
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -519,7 +519,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         isSelected: false,
       ),
       PopularFilterListData(
-        titleTxt: 'Resort',
+        titleTxt: 'Promotion',
         isSelected: false,
       ),
     ];
