@@ -93,11 +93,11 @@ class _ChooseCatDialogState extends State<ChooseCatDialog> {
         ),
       ),
       actions: <Widget>[
-        FlatButton(
+        TextButton(
           child: Text('Cancel'),
           onPressed: Navigator.of(context).pop,
         ),
-        FlatButton(
+        TextButton(
           child: Text('Change'),
           onPressed: () {
           },
@@ -121,7 +121,7 @@ Future<dynamic> alertDialog() async {
       ),
     ),
     actions: <Widget>[
-      FlatButton(
+      TextButton(
         child: Text('Regret'),
         onPressed: () {
           //Navigator.of(context).pop();

@@ -110,7 +110,7 @@ class _AppViewState extends State<AppView> {
   //late int themeValue;
 
   final String defaultSystemLocale = Platform.localeName;
-  final List<Locale> systemLocales = WidgetsBinding.instance!.window.locales;
+  final List<Locale> systemLocales = WidgetsBinding.instance.window.locales;
 
   @override
   Widget build(BuildContext context) {

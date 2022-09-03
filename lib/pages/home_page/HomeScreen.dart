@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   }
 
-  _setSystemUIForProductDesign() => SystemChrome.setSystemUIOverlayStyle(
+  void _setSystemUIForProductDesign() => SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         //statusBarColor: Colors.transparent,
         //statusBarIconBrightness: Brightness.dark,

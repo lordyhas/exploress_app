@@ -92,7 +92,7 @@ class StyleAppTheme extends Cubit<ThemeData> {
   static final Color primaryBlack = Colors.black;
   static final Color primaryWhite = Colors.white;
   static final Color deepPurple = Colors.deepPurpleAccent;
-  static final Color accentColorLight = HexColor('#54D3C2'); //Colors.cyan;
+  static final Color accentColorLight = Colors.cyan;  //HexColor('#54D3C2'); //Colors.cyan;
   static final Color accentColorDark =  accentColorLight;
 
   static final Color secondaryOrange = Colors.deepOrange.shade800;

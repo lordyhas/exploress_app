@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class PageViewSlide extends StatefulWidget {
+  const PageViewSlide({Key? key}) : super(key: key);
+
   @override
   _PageViewSlideState createState() => _PageViewSlideState();
 }
@@ -35,8 +37,8 @@ class PageSelectorSlide extends StatelessWidget {
       this.btnBackText,
       this.tabColor,
       this.tabSelectedColor,
-      this.isAutoSlide
-  }) : assert(children != null, "children widget can't be null"); //assert();
+      this.isAutoSlide, Key? key,
+  }) : super(key: key); //assert();
 
   static const kIcons = <Icon>[
     Icon(Icons.event, size: 150,),
@@ -68,10 +70,17 @@ class PageSelectorSlide extends StatelessWidget {
               ),
               Row(
                 children: [
-                  OutlineButton(
-                    textColor: btnBackColor ?? Colors.black,
-                    borderSide: BorderSide(width: 2.0, color: btnBackColor ?? Colors.black),
-                    padding: EdgeInsets.all(8.0),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      textStyle: TextStyle(color: btnBackColor ?? Colors.black,),
+                      //shape: ,
+                      side: BorderSide(
+                          width: 2.0,
+                          color: btnNextColor ?? Colors.black
+                      ),
+                      padding: EdgeInsets.all(8.0),
+                    ),
+
                     onPressed: () {
                       int i = 0;
                       final TabController controller = DefaultTabController.of(context)!;
@@ -89,15 +98,22 @@ class PageSelectorSlide extends StatelessWidget {
 
                       });
                     },
-                    child: btnBackText,
+                    child: btnBackText ?? Text(''),
                   ),
 
-                  OutlineButton(
-                      textColor: btnNextColor ?? Colors.black,
-                      borderSide: BorderSide(width: 2.0, color: btnNextColor ?? Colors.black),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      textStyle: TextStyle(color: btnNextColor ?? Colors.black,),
+                      //shape: ,
+                      side: BorderSide(
+                          width: 2.0,
+                          color: btnNextColor ?? Colors.black
+                      ),
                       padding: EdgeInsets.all(8.0),
-                      onPressed: (){},
-                    child: btnNextText,
+                    ),
+
+                    onPressed: (){},
+                    child: btnNextText ?? Text(''),
                   )
 
                 ],

@@ -358,8 +358,8 @@ class _DetailProductPageState extends State<DetailProductPage> {
                                             Container(
                                               color: Colors.red,
                                               child: Center(
-                                                child: RaisedButton(
-                                                  color: Colors.white,
+                                                child: TextButton(
+                                                  //color: Colors.white,
                                                   onPressed: () {
                                                     if (_pageController!
                                                         .hasClients) {
@@ -381,8 +381,8 @@ class _DetailProductPageState extends State<DetailProductPage> {
                                             Container(
                                               color: Colors.blue,
                                               child: Center(
-                                                child: RaisedButton(
-                                                  color: Colors.white,
+                                                child: TextButton(
+                                                  //color: Colors.white,
                                                   onPressed: () {
                                                     if (_pageController!
                                                         .hasClients) {

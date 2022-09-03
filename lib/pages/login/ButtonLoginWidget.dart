@@ -81,8 +81,14 @@ class _LoginButton extends StatelessWidget {
             ? const CircularProgressIndicator()
             : Container(
               width: width,
-              child: RaisedButton(
+              child: TextButton(
                 key: const Key('loginForm_continue_raisedButton'),
+                style: TextButton.styleFrom(
+                  backgroundColor:  theme.primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
                 child: Container(
                   child: Row(
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,10 +101,8 @@ class _LoginButton extends StatelessWidget {
                     ],
                   ),
                 ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                color: theme.primaryColor,
+
+
                 onPressed: state.status.isValidated
                 ? () => context.read<LoginCubit>().logInWithCredentials()
                 : null,
@@ -123,7 +127,7 @@ class _GoogleLoginButton extends StatelessWidget {
       onPressed: () => context.read<LoginCubit>().logInWithGoogle(),
       //BlocProvider.of<LoginCubit>(context).logInWithGoogle(),
       style: OutlinedButton.styleFrom(
-        primary: theme.accentColor,
+        //backgroundColor: theme.accentColor,
         textStyle: TextStyle(
           fontWeight: FontWeight.w700,
           color: theme.accentColor,
@@ -138,9 +142,15 @@ class _GoogleLoginButton extends StatelessWidget {
         child: Row(
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(FontAwesomeIcons.google),
+            Icon(FontAwesomeIcons.google, color: theme.accentColor,),
             Spacer(),
-            Text(text),
+            Text(text,
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                color: theme.accentColor,
+              ),
+
+            ),
             Spacer(),
             Icon(FontAwesomeIcons.google, color: Colors.transparent,),
 
@@ -163,24 +173,36 @@ class _FacebookLoginButton extends StatelessWidget {
     final theme = Theme.of(context);
 
 
-    Widget facebookOutlineButton = OutlineButton(
+    Widget facebookOutlineButton = OutlinedButton(
+
       key: const Key('loginForm_facebookLogin_outlineButton'),
-      color: theme.accentColor,
-      textColor: theme.accentColor,
-      highlightedBorderColor: theme.primaryColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-      borderSide: BorderSide(
-        color: theme.accentColor,
+      style: OutlinedButton.styleFrom(
+        textStyle: TextStyle(
+          fontWeight: FontWeight.w700,
+          color: theme.accentColor,
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+        side: BorderSide(
+          color: theme.accentColor,
+        ),
       ),
+
+      //textColor: theme.accentColor,
+      //highlightedBorderColor: theme.primaryColor,
       //icon: Icon(FontAwesomeIcons.facebookF),
       //label: Text("Sign in with Facebook"),
       child: Container(
         child: Row(
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(FontAwesomeIcons.facebookF),
+            Icon(FontAwesomeIcons.facebookF, color: theme.accentColor,),
             Spacer(),
-            Text(text),
+            Text(text,
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                color: theme.accentColor,
+              ),
+            ),
             Spacer(),
             Icon(FontAwesomeIcons.facebookF, color: Colors.transparent,),
 
@@ -318,8 +340,14 @@ class _SignUpSignInButton extends StatelessWidget {
             ? const CircularProgressIndicator()
             : Container(
                 width: width,
-                child: RaisedButton(
+                child: TextButton(
                   key: const Key('signUpForm_continue_raisedButton'),
+                  style: TextButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    backgroundColor: theme.primaryColor,
+                  ),
                   child: Container(
                     child: Row(
                       //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -332,10 +360,7 @@ class _SignUpSignInButton extends StatelessWidget {
                       ],
                     ),
                   ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  color: theme.primaryColor,
+
                   onPressed: state.status.isValidated
                     ? () => context.read<SignUpCubit>().signUpFormSubmitted()
                     : null,

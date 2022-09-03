@@ -73,12 +73,17 @@ class _ProgressButtonState extends State<ProgressButton> with TickerProviderStat
               key: _globalKey,
               height: 48,
               width: _width,
-              child: RaisedButton(
-                animationDuration: Duration(milliseconds: 1000),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(widget.radius ?? 25),
-                ),
-                padding: EdgeInsets.all(0),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  animationDuration: Duration(milliseconds: 1000),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(widget.radius ?? 25),
+                  ),
+                  padding: EdgeInsets.all(0),
+                  elevation: 4,
+                ) ,
+
                 child: setUpButtonChild(),
                 onPressed: () {
                   widget.onPressed!();
@@ -88,8 +93,8 @@ class _ProgressButtonState extends State<ProgressButton> with TickerProviderStat
                     }
                   });
                 },
-                elevation: 4,
-                color: Theme.of(context).primaryColor,
+
+
               ),
             ),
           ),

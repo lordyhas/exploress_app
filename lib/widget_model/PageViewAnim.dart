@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class DescriptionContent extends StatefulWidget {
   final ProductData productData;
-  final  imagePath;
+  final imagePath;
+
   //final String productName;
   //final int price;
   Size? size;
@@ -19,15 +20,15 @@ class DescriptionContent extends StatefulWidget {
     required this.onFavoriteClick,
     required this.onReservedClick,
     required this.onPressed,
-    this.imagePath,
     required this.productData,
-  });
+    this.imagePath,
+
+    Key? key,
+  }) : super(key: key);
+
   @override
-  _DescriptionContentState createState() =>
-      _DescriptionContentState(
-          price: this.productData.price,
-          product: this.productData.productName
-      );
+  _DescriptionContentState createState() => _DescriptionContentState(
+      price: this.productData.price, product: this.productData.productName);
 
   set setSize(Size? size) => this.size = size;
 }
@@ -37,6 +38,7 @@ class _DescriptionContentState extends State<DescriptionContent> {
 
   final String product;
   final double price;
+
   _DescriptionContentState({required this.product, required this.price});
 
   @override
@@ -69,18 +71,20 @@ class _DescriptionContentState extends State<DescriptionContent> {
                 children: [
                   Container(
                     //width: 100,
-                    child: OutlineButton(
-                      //style: OutlinedButton.styleFrom(),
-                      textColor: Colors.deepOrange,
-                      borderSide:
-                          BorderSide(width: 1.5, color: Colors.deepOrange),
-                      padding: EdgeInsets.all(0.0),
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        textStyle: TextStyle(color: Colors.deepOrange),
+                        //shape: ,
+                        side: BorderSide(width: 1.5, color: Colors.deepOrange),
+                        padding: EdgeInsets.all(0.0),
+                      ),
                       //splashColor: Colors.blueAccent,
                       onPressed: widget.onReservedClick,
 
                       child: Text(
                         "Reserver",
-                        style: TextStyle(fontSize: 16.0),
+                        style: TextStyle(
+                            fontSize: 16.0, color: Colors.deepOrange),
                       ),
                     ), /*ListTile(title: Text("Reserver",
                         style: TextStyle(color: Colors.lightBlue),),)*/
@@ -114,15 +118,20 @@ class _DescriptionContentState extends State<DescriptionContent> {
 
 class ParallaxViewPager extends StatefulWidget {
   final int defaultIndex;
+
   //final List<String>? imagePathList;
   final List<DescriptionContent> children;
+
   //DescriptionText(product: "Product", price: 50,)
 
   ParallaxViewPager({
-      //this.imagePathList,
-      required this.children,
-      this.defaultIndex = 0});
-      //: assert(imagePathList.length == children.length);
+    //this.imagePathList,
+    required this.children,
+    this.defaultIndex = 0,
+    Key? key,
+  }) : super(key: key);
+
+  //: assert(imagePathList.length == children.length);
 
   @override
   _ParallaxViewPagerState createState() => _ParallaxViewPagerState();
@@ -165,8 +174,9 @@ class _ParallaxViewPagerState extends State<ParallaxViewPager> {
             //imagePath: widget.children[index].productData.image,
             image: Hero(
               tag: widget.children[index].productData.productCode,
-              child: Image.memory(widget.children[index]
-                  .productData.image!.bytes,),
+              child: Image.memory(
+                widget.children[index].productData.image!.bytes,
+              ),
             ),
             child: widget.children[index],
             //.copyWithSize(Size(0.7 * adjust,0.7 * adjust)),
@@ -181,15 +191,16 @@ class _ParallaxViewPagerState extends State<ParallaxViewPager> {
 
 class CardPageWidget2 extends StatelessWidget {
   final double offset;
+
   //final String imagePath;
   final Widget image;
   final Widget child;
 
-  CardPageWidget2({
-    required this.image,
-    required this.offset,
-    //required this.imagePath,
-    required this.child});
+  CardPageWidget2(
+      { required this.image,
+      required this.offset,
+      //required this.imagePath,
+      required this.child, Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -207,16 +218,17 @@ class CardPageWidget2 extends StatelessWidget {
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             ClipRRect(
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(radius),
-                bottom: Radius.circular(radius),
-              ),
-              child: image /*Image.asset(
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(radius),
+                  bottom: Radius.circular(radius),
+                ),
+                child:
+                    image /*Image.asset(
                 imagePath,
                 alignment: Alignment(-offset.abs(), 0),
                 fit: BoxFit.fill,
               ),*/
-            ),
+                ),
             //SizedBox(height: 8),
             Align(
               alignment: Alignment.center,
@@ -236,7 +248,6 @@ class CardPageWidget2 extends StatelessWidget {
     );
   }
 }
-
 
 /*
 class CardPageWidget extends StatelessWidget {
