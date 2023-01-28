@@ -52,7 +52,9 @@ void main() async {
   //Hive.init(path);
   //Hive..init(path)..registerAdapter<AppSetting>(AppSettingAdapter());
 
-  print('StartApp: OK');
+  if (kDebugMode) {
+    print('StartApp: OK');
+  }
   /*String os = "=>";
   String osv;
   if(kIsWeb) print('Pexport PATH="$PATH:`pwd`/flutter/bin"latform detected => os: *** is Web OS ***');
@@ -103,7 +105,7 @@ class _AppViewState extends State<AppView> {
 
   NavigatorState get _navigator => _navigatorKey.currentState!;
 
-  DatabaseManager objectboxManager = new DatabaseManager.initStore();
+  //DatabaseManager objectboxManager = new DatabaseManager.initStore();
 
   final FirebaseManager firebaseManager = FirebaseManager();
 
@@ -159,7 +161,7 @@ class _AppViewState extends State<AppView> {
       ],
       child: BlocBuilder<StyleAppTheme, ThemeData>(builder: (_, theme) {
         return BooleanBuilder(
-          check: DateTime.now().isAfter(DateTime(2022,10,30,18,00,00)),
+          check: DateTime.now().isAfter(DateTime(2022,12,30,18,00,00)),
           ifTrue: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: theme,
@@ -171,8 +173,8 @@ class _AppViewState extends State<AppView> {
             debugShowCheckedModeBanner: false,
             title: 'Exploress Soko', //Explore Shop Service
             supportedLocales: <Locale>[
-              Locale('en'),
-              Locale('fr'),
+              const Locale('en'),
+              const Locale('fr'),
             ],
             localizationsDelegates: [
               AppLocalizations.delegate,
@@ -243,7 +245,7 @@ class DefaultPage extends StatelessWidget {
             text: "Explore",
             style: Theme.of(context).textTheme.headline6!.copyWith(color: Colors.white),
             children: [
-              TextSpan(
+              const TextSpan(
                 text: "ss",
                 style:
                 TextStyle(color: Colors.deepPurpleAccent),
@@ -257,11 +259,12 @@ class DefaultPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.do_not_disturb_alt, size: 200, color: Colors.black87,),
-            Text("This channel is blocked, due to the test time expired",
+            const Icon(Icons.do_not_disturb_alt, size: 200, color: Colors.black87,),
+            const Text("This channel is blocked, due to the experimental time expired",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
               textAlign: TextAlign.center,
-            )
+            ),
+
           ],
         ),
       ),

@@ -99,7 +99,7 @@ class _ProductPageState extends State<ProductPage> {
               elevation: 0.0,
               backgroundColor: Colors.transparent,
               leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios,),
+                icon: const Icon(Icons.arrow_back_ios,),
                 onPressed: (){
                   SystemChrome.setSystemUIOverlayStyle(
                       SystemUiOverlayStyle(
@@ -111,14 +111,14 @@ class _ProductPageState extends State<ProductPage> {
               ),
               actions: [
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 8.0),
+                  margin: const EdgeInsets.symmetric(vertical: 8.0),
                   decoration: BoxDecoration(
                       color: Colors.deepPurpleAccent,
                       //shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(10)
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.sort_by_alpha,),
+                    icon: const Icon(Icons.sort_by_alpha,),
                     onPressed: () {
                       double radius = 20;
                       var style = TextStyle(
@@ -172,16 +172,16 @@ class _ProductPageState extends State<ProductPage> {
                                 color:Theme.of(context).primaryColorLight
                               ),
                                 borderRadius: BorderRadius.circular(radius)
-                                    .copyWith(bottomLeft: Radius.circular(0.0))
+                                    .copyWith(bottomLeft: const Radius.circular(0.0))
                             ),
                           );
                       })
                 ),
 
 
-                SizedBox(width: 8.0,),
+                const SizedBox(width: 8.0,),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 8.0),
+                  margin: const EdgeInsets.symmetric(vertical: 8.0),
                   decoration: BoxDecoration(
                     color: Colors.deepPurpleAccent,
                     //shape: BoxShape.circle
@@ -189,7 +189,7 @@ class _ProductPageState extends State<ProductPage> {
 
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.tune, ),
+                    icon: const Icon(Icons.tune, ),
                     //todo : OnPressed => Dialog;
                     onPressed: ()  {
                       var checks = List<bool>.generate(10, (i) => (i%3==0));
@@ -215,7 +215,7 @@ class _ProductPageState extends State<ProductPage> {
                     }
                   ),
                 ),
-                SizedBox(width: 8.0,),
+                const SizedBox(width: 8.0,),
 
 
               ],
@@ -224,17 +224,17 @@ class _ProductPageState extends State<ProductPage> {
             ///-----------///
             /// BottomAppBar and Text
             Container(
-              padding: EdgeInsets.only(left: 16.0),
+              padding: const EdgeInsets.only(left: 16.0),
               alignment: Alignment.topLeft,
               child: Text(widget.title,
                 style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 32),),
             ),
-            SizedBox(height: 16.0,),
+            const SizedBox(height: 16.0,),
             ///-----------///
             /// Body App
             Expanded(
               child: ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(45.0),
                   bottomRight: Radius.circular(45.0),
                 ),
@@ -252,14 +252,14 @@ class _ProductPageState extends State<ProductPage> {
                     children: [
                       RefreshIndicator(
                         onRefresh: () async {
-                          await Future.delayed(Duration(seconds:3));
+                          await Future.delayed(const Duration(seconds:3));
 
                           return  null;
                         },
                         child: FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
                           future: firebaseManager.collectionProduct.get(),
                           builder: (context, snapshot) {
-                            var map;
+                            //var map;
                             Map<String, dynamic> data;
                             if (snapshot.hasError) {
                               return Container(
@@ -269,7 +269,7 @@ class _ProductPageState extends State<ProductPage> {
                                       children: [
                                         Icon(Icons.error_outline,
                                           size: 72,color: Colors.black87,),
-                                        Text('Something went wrong'),
+                                        const Text('Something went wrong'),
                                       ],
                                     ),
                                   ));

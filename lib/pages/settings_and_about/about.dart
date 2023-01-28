@@ -9,7 +9,8 @@ import 'package:flutter/services.dart';
 import 'package:package_info/package_info.dart';
 
 class AboutPage extends StatefulWidget{
-  AboutPage({Key? key, this.title}) : super(key: key);
+  static const routeName = "/about";
+  const AboutPage({Key? key, this.title}) : super(key: key);
   final String? title;
 
   static Route route({isSystemSet = false}) {

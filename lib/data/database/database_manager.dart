@@ -7,7 +7,6 @@ import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:utils_component/utils_component.dart';
 
-import '../../objectbox.g.dart';
 
 import 'package:exploress/data/database/model/AppSettingModel.dart';
 import 'package:exploress/data/database/model/setting_data.dart';
@@ -150,7 +149,7 @@ class HiveBoxManager extends XDatabaseManager {
 
 }
 
-
+/*
 class DatabaseManager {
 
   Store? storeManager;
@@ -189,7 +188,7 @@ class DatabaseManager {
   //Store? get storeManager => this._storeManager;
 
 
-  /*SettingAppData initStoreBoxSetting(){
+  SettingAppData initStoreBoxSetting(){
     final Store store =  openStoreBox();
     final box = store.box<SettingAppData>();
 
@@ -212,7 +211,7 @@ class DatabaseManager {
     settingQuery.close();
 
     return settingData ?? SettingAppData();
-  }*/
+  }
 
   Future<SettingAppData?> get getSettingDataBox async {
     Store store = await openStoreBox();
@@ -290,7 +289,7 @@ class DatabaseManager {
 
   }
 
-}
+}*/
 
 
   //final String _dbNameFile = 'exploress_db.db';

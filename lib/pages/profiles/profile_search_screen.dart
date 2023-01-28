@@ -52,7 +52,7 @@ class _SearchScreenState extends State<SearchScreen> {
             children: [
               AppBar(
                 leading: IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back),
                   onPressed: Navigator.of(context).pop,
                 ),
                 automaticallyImplyLeading: false,
@@ -60,9 +60,11 @@ class _SearchScreenState extends State<SearchScreen> {
                 actions: [
                   IconButton(
                     tooltip: text['tooltip_search'],
-                    icon: Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                     onPressed: () {
-                      /*final selected = await */showSearch<ProductData?>(
+                      /*final selected = await */
+
+                      showSearch<ProductData?>(
                         context: context,
                         delegate: //ProductSearchDelegate(list),
                         ExploressSearchDelegate(
@@ -89,7 +91,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         height: 50,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
-                          children: [
+                          children: const <Widget>[
                             Chip(label: Text("#Smartphone")),
                             SizedBox(width: 2.0,),
                             Chip(label: Text("#Tablette")),
@@ -118,7 +120,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               child: Expanded(
                                 child: SingleChildScrollView(
                                   child: Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                     child: Wrap(
                                       //spacing: 4.0,
                                       //clipBehavior: Clip.antiAlias,

@@ -4,7 +4,6 @@ import 'dart:async';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exploress/data/app_bloc_library.dart';
-import 'package:exploress/data/app_database.dart';
 
 import 'package:exploress/data/map_data/gps_location.dart';
 import 'package:exploress/data/values.dart';
@@ -27,20 +26,21 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:utils_component/utils_component.dart';
 import 'package:shimmer/shimmer.dart';
 
-import 'login/signup_and_login.dart';
+import 'package:exploress/pages/login/signup_and_login.dart';
 
 
 part 'home_page/HomeAppBar.dart';
 part 'home_page/HomeDrawerView.dart';
-part 'home_page/HomeScreen.dart';
+part 'home_page/home_screen.dart';
 
 
 class HomePage extends StatefulWidget  {
+  static const routeName = "/home";
   const HomePage({Key? key,}) : super(key: key);
 
   static Route route() {
     //if(kIsWeb) return MaterialPageRoute<void>(builder: (_) => HomePage());
-    return MaterialPageRoute<void>(builder: (_) => HomePage());
+    return MaterialPageRoute<void>(builder: (_) => const HomePage());
   }
 
   @override
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
   String? appBarBackgroundImage;
   var text;
   final FirebaseManager firebaseManager = FirebaseManager();
-  final DatabaseManager objectBoxManager = DatabaseManager.empty();
+  //final DatabaseManager objectBoxManager = DatabaseManager.empty();
 
   @override
   void initState() {
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("didChangeDependencies xxx xxx xxx xxx");
+    debugPrint("didChangeDependencies xxx xxx xxx xxx");
     _uploadUserInCloud();
     _checkSomePermissions();
 
@@ -79,23 +79,27 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
     super.didChangeAppLifecycleState(state);
     switch (state) {
       case AppLifecycleState.inactive:
-        print('appLifeCycleState inactive === === === ===');
+        if (kDebugMode) {
+          print('appLifeCycleState inactive === === === ===');
+        }
         break;
       case AppLifecycleState.resumed:
-        print('appLifeCycleState resumed === === === ===');
+        if (kDebugMode) {
+          print('appLifeCycleState resumed === === === ===');
+        }
         break;
       case AppLifecycleState.paused:
-        print('appLifeCycleState paused === === === ===');
+        debugPrint('appLifeCycleState paused === === === ===');
         break;
       case AppLifecycleState.detached:
-        print('appLifeCycleState suspending ======================');
+        debugPrint('appLifeCycleState suspending ======================');
         break;
     }
   }
 
   void _initPosition() async {
     //GPSLocation.myCurrentPosition();
-    Future.delayed(Duration(seconds: 5));
+    Future.delayed(const Duration(seconds: 5));
     BlocProvider.of<MapsBloc>(context).load(
         position: await GPSLocation.myCurrentPosition(),
     );
@@ -117,16 +121,16 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
       //Permission.camera,
       //Permission.locationAlways,
     ].request();
-    print("storage Permission :"+statuses[Permission.storage].toString());
+    debugPrint("storage Permission :"+statuses[Permission.storage].toString());
   }
 
 
-  _uploadUserInCloud() async {
+  void _uploadUserInCloud() async {
     if (BlocProvider.of<AuthenticationBloc>(context).state.status ==
         AuthenticationStatus.authenticated) {
       //User user = context.watch<AuthenticationBloc>().state.user;
       User user = BlocProvider.of<AuthenticationBloc>(context).state.user;
-      print('AuthenticationBloc(context.state.user) => $user ==== ====');
+      debugPrint('AuthenticationBloc(context.state.user) => $user ==== ====');
 
 
       if ( true/*user.photoMail != null*/) {
@@ -134,7 +138,7 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
             .load(user.photoMail!))
             .buffer
             .asUint8List();
-        print('Write Report => FirebaseManager.uploadUserInCloud(context)'
+        debugPrint('Write Report => FirebaseManager.uploadUserInCloud(context)'
             ' : write document in Firestore ### ###');
         firebaseManager.addUserInCloud(
           user: user.copyWith(
@@ -148,7 +152,7 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
 
 
       if (userUploaded != User.empty) {
-        print(
+        debugPrint(
             'Read Report => FirebaseManager.uploadUserInCloud(context)'
                 ' : read doc in Firestore ### ###');
         BlocProvider.of<AuthenticationBloc>(context).updateUser(userUploaded);

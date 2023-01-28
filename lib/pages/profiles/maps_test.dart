@@ -30,17 +30,17 @@ class _MapSampleState extends State<MapSample> {
 
   Future<Marker> customHueFromAssets() async{
     return Marker(
-        markerId: MarkerId("custom"),
-        position: LatLng(-11.632200, 27.560340),
+        markerId: const MarkerId("custom"),
+        position: const LatLng(-11.632200, 27.560340),
         icon: await BitmapDescriptor.fromAssetImage(
-            ImageConfiguration(devicePixelRatio: 2.5),
+            const ImageConfiguration(devicePixelRatio: 2.5),
             'asset/icons/shop_hue.png'
         )
     );
   }
 
   Future<LatLng> defaultLshi() async{
-    return LatLng(-11.632240, 27.460640);
+    return const LatLng(-11.632240, 27.460640);
   }
 
   Future<LatLng> currentPosition() async {
@@ -49,14 +49,14 @@ class _MapSampleState extends State<MapSample> {
   }
 
 //-11.6284708 + 27.484585699999997
-  static final CameraPosition _kLshi = CameraPosition(
+  static final CameraPosition _kLshi = const CameraPosition(
       target: LatLng(-11.632240, 27.460640),
       zoom: 13.0
   );
-  static final CameraPosition _kLksi = CameraPosition(
+  static final CameraPosition _kLksi = const CameraPosition(
       target: LatLng(-10.982720, 26.737591),
       zoom: 15.0);
-  static final CameraPosition prostyle243 = CameraPosition(
+  static final CameraPosition prostyle243 = const CameraPosition(
       target: LatLng(-10.982720, 26.737591),
       zoom: 15.0);
 

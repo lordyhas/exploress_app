@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen>
   String? appBarBackgroundImage;
   var text;
   final FirebaseManager firebaseManager = FirebaseManager();
-  final DatabaseManager objectBoxManager = DatabaseManager.empty();
+  //final DatabaseManager objectBoxManager = DatabaseManager.empty();
 
   //AppData? appData;
 
@@ -80,9 +80,9 @@ class _HomeScreenState extends State<HomeScreen>
       bool value = false;
       await AwesomeDialog(
         context: context,
-        dialogType: DialogType.WARNING,
+        dialogType: DialogType.warning,
         headerAnimationLoop: false,
-        animType: AnimType.TOPSLIDE,
+        animType: AnimType.topSlide,
         title: 'Warning',
         desc: 'Are you sure you want to delete the item',
         //btnCancelColor: Theme.of(context).,
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen>
           });
         },
         //() => Navigator.of(context).pop(false),
-        btnOkColor: Theme.of(context).accentColor,
+        btnOkColor: Theme.of(context).colorScheme.secondary,
         btnOkOnPress: () {
           setState(() {
             value = true;
@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen>
                 )
             ),
             Container(
-              margin: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.all(16.0),
               child: ListTile(
                 leading: Container(
                   //width: 70,
@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen>
                         .headline5
                         ?.copyWith(fontSize: 42, fontWeight: FontWeight.bold),
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: "ss",
                         style: TextStyle(
                             color: Colors.deepPurpleAccent),
@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen>
                   BlocProvider.of<LanguageBloc>(context)
                       .state
                       .strings['label']!,
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
             ),
@@ -169,17 +169,17 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ),
             Container(
-              margin: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.all(16.0),
               height: 150,
               //color: Colors.deepOrange,
-              decoration: BoxDecoration(
-                image: DecorationImage(
+              decoration: const BoxDecoration(
+                image:  DecorationImage(
                   image: AssetImage("assets/img/banner_img.png"),
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.all(16.0),
               child: ListTile(
                 leading: Container(
                   //width: 70,
@@ -198,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen>
                         .headline5
                         ?.copyWith(fontSize: 42, fontWeight: FontWeight.bold),
                     children: [
-                      TextSpan(
+                      const TextSpan(
                         text: "ss",
                         style: TextStyle(
                             color: Colors.deepPurpleAccent),
@@ -210,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen>
                   BlocProvider.of<LanguageBloc>(context)
                       .state
                       .strings['label']!,
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
             ),
@@ -232,14 +232,14 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ),
             Container(
-              margin: EdgeInsets.all(32.0),
+              margin: const EdgeInsets.all(32.0),
               child: Image.asset('assets/img/feature_4.png'),
             ),
             Align(
               alignment: Alignment.bottomCenter ,
               child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 20.0),
-                  child: Text('Sofa Promotion de 50%, chez Prostyle 243')
+                  margin: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: const Text('Sofa Promotion de 50%, chez Prostyle 243')
               ),
             ),
           ],
@@ -259,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen>
                 )
             ),
             Container(
-              margin: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.all(16.0),
               child: ListTile(
                 leading: Container(
                   //width: 70,
@@ -278,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen>
                         .headline5
                         ?.copyWith(fontSize: 42, fontWeight: FontWeight.bold),
                     children: [
-                      TextSpan(
+                     const TextSpan(
                         text: "ss",
                         style: TextStyle(
                             color: Colors.deepPurpleAccent),
@@ -290,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen>
                   BlocProvider.of<LanguageBloc>(context)
                       .state
                       .strings['label']!,
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
             ),
@@ -367,7 +367,7 @@ class _HomeScreenState extends State<HomeScreen>
             leading: (MediaQuery.of(context).size.width < maxSizeTitle)
                 ? Builder(
               builder: (BuildContext context) => IconButton(
-                icon: Icon(Icons.menu),
+                icon: const Icon(Icons.menu),
                 onPressed: () {
                   _setSystemUIOverlayStyle();
                   Scaffold.of(context).openDrawer();
@@ -402,7 +402,7 @@ class _HomeScreenState extends State<HomeScreen>
                 children: [
                   IconButton(
                       tooltip: text['tooltip_search'],
-                      icon: Icon(Icons.search),
+                      icon: const Icon(Icons.search),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -421,7 +421,7 @@ class _HomeScreenState extends State<HomeScreen>
                       }),
                   IconButton(
                       tooltip: text['tooltip_profile'],
-                      icon: Icon(FontAwesomeIcons.userCircle),
+                      icon: const Icon(FontAwesomeIcons.circleUser),
                       onPressed: () {
                         var check = BlocProvider.of<AuthenticationBloc>(context)
                             .state
@@ -446,7 +446,7 @@ class _HomeScreenState extends State<HomeScreen>
                       }),
                   IconButton(
                       tooltip: text['tooltip_reserve'],
-                      icon: Icon(Icons.shopping_cart),
+                      icon: const Icon(Icons.shopping_cart),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -487,12 +487,12 @@ class _HomeScreenState extends State<HomeScreen>
                                   ),
                                   Row(
                                     children: [
-                                      Spacer(),
+                                      const Spacer(),
                                       TabPageSelector(
                                         controller: _slideTabController,
                                         selectedColor: Colors.white,
                                       ),
-                                      Spacer(),
+                                      const Spacer(),
                                     ],
                                   ),
 
@@ -531,7 +531,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   left: 16, right: 16, top: 8, bottom: 4),
                               child: Row(
                                 children: <Widget>[
-                                  Expanded(
+                                  const Expanded(
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
@@ -548,7 +548,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     padding: const EdgeInsets.only(left: 8),
                                     child: Row(
                                       children: <Widget>[
-                                        Text(
+                                        const Text(
                                           "I'm lucky",
                                           style: TextStyle(
                                             color: Colors.white,
@@ -566,7 +566,6 @@ class _HomeScreenState extends State<HomeScreen>
                                                       builder: (BuildContext context) => FiltersScreen(),
                                                       fullscreenDialog: true),
                                                 );
-                                                print('pressed ======= ======');
                                                 //_addToDatabase();
                                               },
                                               child: Icon(Icons.sort,
@@ -597,7 +596,7 @@ class _HomeScreenState extends State<HomeScreen>
                       color: Theme.of(context).primaryColor,
                     )
                         : Container(),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
 
@@ -624,16 +623,20 @@ class _HomeScreenState extends State<HomeScreen>
                                         //Text(" | "),
                                         //FlatButton(onPressed: (){}, child:  Text("Previous")),
                                         InkWell(
-                                          child: Text("Previous"),
+                                          child: const Text("Previous"),
                                           onTap: () {
-                                            print('Previous');
+                                            if (kDebugMode) {
+                                              print('Previous');
+                                            }
                                           },
                                         ),
-                                        Text(" | "),
+                                        const Text(" | "),
                                         InkWell(
-                                          child: Text("Next"),
+                                          child: const Text("Next"),
                                           onTap: () {
-                                            print('next');
+                                            if (kDebugMode) {
+                                              print('next');
+                                            }
                                           },
                                         ),
 

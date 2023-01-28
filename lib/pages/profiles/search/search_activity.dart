@@ -78,7 +78,7 @@ class ExploressSearchDelegate extends SearchDelegate<ProductData?> {
   ExploressSearchDelegate(List<ProductData> words, {history = const <ProductData>[]})
       : _words = words,
         _history = history,
-        super(searchFieldStyle: TextStyle(color: Colors.black38),);
+        super(searchFieldStyle: const TextStyle(color: Colors.black38),);
 
 
   ProductData? _productFind;

@@ -30,7 +30,7 @@ enum StylesThemeState{light,dark}
 
 class StyleAppTheme extends Cubit<ThemeData> {
 
-  final DatabaseManager objectBoxManager = DatabaseManager.empty();
+  //final DatabaseManager objectBoxManager = DatabaseManager.empty();
 
   StyleAppTheme([StylesThemeState? stylesTheme])
       : super(defaultTheme(stylesTheme)) {restoreTheme();}
