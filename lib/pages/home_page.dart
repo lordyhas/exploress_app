@@ -147,9 +147,7 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
         );
       }
 
-
       User userUploaded = await firebaseManager.getUserInCloud(userId: user.id);
-
 
       if (userUploaded != User.empty) {
         debugPrint(
@@ -157,9 +155,7 @@ class _MyHomePageState extends State<HomePage> with WidgetsBindingObserver{
                 ' : read doc in Firestore ### ###');
         BlocProvider.of<AuthenticationBloc>(context).updateUser(userUploaded);
         //context.read<AuthenticationBloc>().updateUser(userUploaded);
-
       }
-
     }
   }
 

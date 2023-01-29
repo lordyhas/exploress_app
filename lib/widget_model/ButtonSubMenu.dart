@@ -26,7 +26,8 @@ class ButtonSubMenu extends StatefulWidget {
     this.color,
     this.sizeWidth = 150,
     this.isWeb = false,
-  }) ;
+    Key? key,
+  }) : super(key: key) ;
 
   @override
   _ButtonSubMenuState createState() => _ButtonSubMenuState();
@@ -44,7 +45,7 @@ class _ButtonSubMenuState extends State<ButtonSubMenu> {
 
   }
 
-  setSystemUIForProductDesign() => SystemChrome.setSystemUIOverlayStyle(
+  void setSystemUIForProductDesign() => SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         //statusBarColor: Colors.transparent,
         //statusBarIconBrightness: Brightness.dark,
@@ -52,7 +53,8 @@ class _ButtonSubMenuState extends State<ButtonSubMenu> {
       )
   );
 
-  setSystemUIForShopDesign() => SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  void setSystemUIForShopDesign() => SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
     // statusBarColor: Colors.transparent,
     // statusBarIconBrightness: Brightness.dark,
     // statusBarBrightness: Platform.isAndroid ? Brightness.dark : Brightness.light,
@@ -83,7 +85,7 @@ class _ButtonSubMenuState extends State<ButtonSubMenu> {
                     content: Container(
                       //height: 100,
                       //width: 100,
-                        child: Text('Shops Coming Soon',
+                        child: const Text('Shops Coming Soon',
                           style: TextStyle(color: Colors.red),
                           textAlign: TextAlign.center,
                         )
@@ -133,7 +135,7 @@ class _ButtonSubMenuState extends State<ButtonSubMenu> {
                     content: Container(
                       //height: 100,
                       //width: 100,
-                        child: Text('Products Coming Soon',
+                        child: const Text('Products Coming Soon',
                           style: TextStyle(color: Colors.red),
                           textAlign: TextAlign.center,
                         )
@@ -155,7 +157,7 @@ class _ButtonSubMenuState extends State<ButtonSubMenu> {
                   content: Container(
                     //height: 100,
                     //width: 100,
-                      child: Text('No Restaurant Yet',
+                      child: const Text('No Restaurant Yet',
                         style: TextStyle(color: Colors.red),
                         textAlign: TextAlign.center,
                       )
@@ -222,7 +224,7 @@ class _ButtonSubMenuState extends State<ButtonSubMenu> {
         //backgroundColor: Theme.of(context).primaryColor,
         //collapsedBackgroundColor: Theme.of(context).primaryColorLight,
         //trailing: Icon(Icons.add_circle_outline),
-        childrenPadding: EdgeInsets.all(2.0),
+        childrenPadding: const EdgeInsets.all(2.0),
         title: Text(dropdownValue,style: Theme.of(context).textTheme.subtitle2,),
         children: childrenItem.map(
                 (value) => Container(

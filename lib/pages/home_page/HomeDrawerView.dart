@@ -1,5 +1,4 @@
- part of '../home_page.dart';
-
+part of '../home_page.dart';
 
 // ignore: must_be_immutable
 class DrawerView extends Drawer {
@@ -8,11 +7,12 @@ class DrawerView extends Drawer {
 
 
   DrawerView({
+    required this.buttonSubMenuList,
     Key? key,
     double elevation = 16.0,
     Widget? child,
     String? semanticLabel,
-    required this.buttonSubMenuList
+
   }) : super(key: key, elevation: elevation, semanticLabel: semanticLabel);
 
 
@@ -26,7 +26,7 @@ class DrawerView extends Drawer {
       //semanticLabel: "Open Menu",
       child: Container(
         ///color: Theme.of(context).scaffoldBackgroundColor,
-        padding: EdgeInsets.only(top: 52.0),
+        padding: const EdgeInsets.only(top: 52.0),
         child: Column(
           children: [
             Container(
@@ -53,14 +53,14 @@ class DrawerView extends Drawer {
                         text: "Explore",
                         style: TextStyle(
                             color: Theme.of(context).primaryColor,
-                            fontSize:
-                            34), //Theme.of(context).textTheme.headline5,
+                            fontSize: 34,
+                        ), //Theme.of(context).textTheme.headline5,
                         children: [
                           TextSpan(
                             text: "ss",
                             style: TextStyle(
                                 color: Theme.of(context).primaryColorLight),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -72,7 +72,7 @@ class DrawerView extends Drawer {
                         switch (state.status) {
                           case AuthenticationStatus.authenticated:
                             return Container(
-                                margin: EdgeInsets.all(8.0),
+                                margin: const EdgeInsets.all(8.0),
                                 child: Chip(
                                   avatar: CircleAvatar(
                                     backgroundColor: context
@@ -113,10 +113,10 @@ class DrawerView extends Drawer {
             ),
             Expanded(
               child: ListView(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.zero,
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
                   Container(
@@ -173,7 +173,7 @@ class DrawerView extends Drawer {
                         onTap: () {
                         },
                       )),
-                  Divider(),
+                  const Divider(),
                   //Container( child: ListTile(title: Text("Other :"),)),
                   Container(
                       width: 100,
@@ -216,7 +216,8 @@ class DrawerView extends Drawer {
                           Navigator.push(
                               context, AboutPage.route(isSystemSet: true));
                         },
-                      )),
+                      ),
+                  ),
                   Container(
                       width: 100,
                       child: ListTile(

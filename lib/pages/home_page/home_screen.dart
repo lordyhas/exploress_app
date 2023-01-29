@@ -28,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   void initState() {
-    print('###### initState(HOME-SCREEN) #######');
+    if (kDebugMode) {
+      print('###### initState(HOME-SCREEN) #######');
+    }
     super.initState();
     _slideTabController = TabController(vsync: this, length: 4);
 
@@ -44,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen>
   );
   void _slideAnimationStart() {
     int i = 0;
-    Timer.periodic(Duration(seconds: 5), (timer) {
+    Timer.periodic(const Duration(seconds: 5), (timer) {
       //print("Slide Move img to : $i");
       if (i == slidesLength) i = 0;
       if (!_slideTabController!.indexIsChanging) {
@@ -673,9 +675,9 @@ class _HomeScreenState extends State<HomeScreen>
                                               ),
                                             );
                                             ScaffoldMessenger.of(context).showSnackBar(
-                                              new SnackBar(
+                                               SnackBar(
                                                   backgroundColor: Theme.of(context).primaryColorDark,
-                                                  content: new Text(' Produit Reservé ')
+                                                  content: const Text(' Produit Reservé ')
                                               ),
                                             );
                                             firebaseManager.addReservedProduct(
@@ -725,7 +727,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             .textTheme
                                             .bodyText2!
                                             .copyWith(fontSize: 20)),
-                                    trailing: Text("Previous | Next"),
+                                    trailing: const Text("Previous | Next"),
                                   ),
                                   LoadingProductWidget(isTendency: true,),
                                 ],
@@ -750,10 +752,10 @@ class _HomeScreenState extends State<HomeScreen>
                                             .textTheme
                                             .bodyText2!
                                             .copyWith(fontSize: 20)),
-                                    trailing: Text("Previous | Next"),
+                                    trailing: const Text("Previous | Next"),
                                   ),
                                   Card(
-                                    margin: EdgeInsets.symmetric(
+                                    margin: const EdgeInsets.symmetric(
                                         vertical: 16.0, horizontal: 4.0),
                                     elevation: 30,
                                     color: Colors.transparent,
@@ -776,7 +778,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                 },
                                                 child: Container(
                                                   height: 200,
-                                                  margin: EdgeInsets.symmetric(horizontal: 8.0),
+                                                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
                                                   child: Stack(
                                                     children: [
                                                       Container(
@@ -786,15 +788,15 @@ class _HomeScreenState extends State<HomeScreen>
                                                         ),
                                                       ),
                                                       Container(
-                                                        margin: EdgeInsets.only(top: 16.0, left: 16.0),
+                                                        margin: const EdgeInsets.only(top: 16.0, left: 16.0),
                                                         child: RichText(
                                                           text: TextSpan(
-                                                              style: TextStyle(
+                                                              style: const TextStyle(
                                                                   color: Colors.black54
                                                               ),
                                                               children: [
                                                                 TextSpan(text: "${product.productName}\n",
-                                                                  style: TextStyle(
+                                                                  style: const TextStyle(
                                                                       fontWeight: FontWeight.bold
                                                                   ),
                                                                 ),
@@ -853,7 +855,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             .textTheme
                                             .bodyText2!
                                             .copyWith(fontSize: 20)),
-                                    trailing: Text("Previous | Next"),
+                                    trailing: const Text("Previous | Next"),
                                   ),
                                   LoadingProductWidget(),
                                 ],
@@ -878,10 +880,10 @@ class _HomeScreenState extends State<HomeScreen>
                                             .textTheme
                                             .bodyText2!
                                             .copyWith(fontSize: 20)),
-                                    trailing: Text("Previous | Next"),
+                                    trailing: const Text("Previous | Next"),
                                   ),
                                   Card(
-                                    margin: EdgeInsets.symmetric(
+                                    margin: const EdgeInsets.symmetric(
                                         vertical: 16.0, horizontal: 4.0),
                                     elevation: 30,
                                     color: Colors.transparent,
@@ -889,7 +891,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(17),
                                       child: SingleChildScrollView(
-                                        physics: BouncingScrollPhysics(),
+                                        physics: const BouncingScrollPhysics(),
                                         scrollDirection: Axis.horizontal,
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -905,7 +907,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                   },
                                                   child: Container(
                                                     height: 200,
-                                                    margin: EdgeInsets.symmetric(horizontal: 8.0),
+                                                    margin: const EdgeInsets.symmetric(horizontal: 8.0),
                                                     child: Stack(
                                                       children: [
                                                         Container(
@@ -915,15 +917,15 @@ class _HomeScreenState extends State<HomeScreen>
                                                           ),
                                                         ),
                                                         Container(
-                                                          margin: EdgeInsets.only(top: 16.0, left: 16.0),
+                                                          margin: const EdgeInsets.only(top: 16.0, left: 16.0),
                                                           child: RichText(
                                                             text: TextSpan(
-                                                                style: TextStyle(
+                                                                style: const TextStyle(
                                                                     color: Colors.black54
                                                                 ),
                                                                 children: [
                                                                   TextSpan(text: "${product.productName}\n",
-                                                                    style: TextStyle(
+                                                                    style: const TextStyle(
                                                                         fontWeight: FontWeight.bold
                                                                     ),
                                                                   ),
@@ -983,7 +985,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             .textTheme
                                             .bodyText2!
                                             .copyWith(fontSize: 20)),
-                                    trailing: Text("Previous | Next"),
+                                    trailing: const Text("Previous | Next"),
                                   ),
                                   LoadingProductWidget(),
                                 ],
@@ -1008,7 +1010,7 @@ class _HomeScreenState extends State<HomeScreen>
                                       .textTheme
                                       .bodyText2!
                                       .copyWith(fontSize: 20)),
-                              trailing: Text("Previous | Next"),
+                              trailing: const Text("Previous | Next"),
                             ),
                             LoadingProductWidget(),
                           ],
@@ -1016,13 +1018,13 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
 
                     ),
-                    SizedBox(height: 16.0,),
+                    const SizedBox(height: 16.0,),
                     Container(
                       alignment: Alignment.center,
-                      child: CircularProgressIndicator(),
+                      child: const CircularProgressIndicator(),
                     ),
 
-                    SizedBox(height: 16.0,),
+                    const SizedBox(height: 16.0,),
                   ],
                 ),
               )),
@@ -1036,22 +1038,22 @@ class _HomeScreenState extends State<HomeScreen>
 
 class LoadingProductWidget extends StatelessWidget {
   final bool isTendency;
-  LoadingProductWidget({this.isTendency = false});
+  LoadingProductWidget({Key? key, this.isTendency = false}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
       child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            if(isTendency) SizedBox(width: 90,)
-            else SizedBox(),
+            if(isTendency) const SizedBox(width: 90,)
+            else const SizedBox(),
             for (int i = 1; i < 6; i++)
               Container(
-                margin:EdgeInsets.symmetric(horizontal:8.0),
+                margin: const EdgeInsets.symmetric(horizontal:8.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(

@@ -1,8 +1,8 @@
-import 'package:exploress/data/app_bloc_library.dart';
+
 import 'package:google_maps_flutter/google_maps_flutter.dart' as maps;
 import 'package:latlong2/latlong.dart' as dist;
 
-import 'data/app_database.dart';
+import 'package:exploress/data/app_database.dart';
 
 class DataTest {
   static List<ShopData> shops = [
@@ -16,7 +16,7 @@ class DataTest {
       phoneNumber: "+243 998731145",
       phoneNumber2: "+243 848731145",
       canDeliver: true,
-      location: maps.LatLng(-11.6284708, 27.487585),
+      location: const maps.LatLng(-11.6284708, 27.487585),
     ),
     ShopData(
       shopName: "Galaxy Mobile",
@@ -28,7 +28,7 @@ class DataTest {
       phoneNumber: "+243 998466121",
       phoneNumber2: "+243 8418321547",
       canDeliver: true,
-      location: maps.LatLng(-11.627637, 27.475301),
+      location: const maps.LatLng(-11.627637, 27.475301),
     ),
     ShopData(
       shopCode: 'BoutiqueGrandBoss1234',
@@ -40,7 +40,7 @@ class DataTest {
       phoneNumber: "+243 998466121",
       phoneNumber2: "+243 8418321547",
       canDeliver: true,
-      location: maps.LatLng(-11.654236, 27.482564),
+      location: const maps.LatLng(-11.654236, 27.482564),
     ),
     ShopData(
       shopCode: 'QS1234',
@@ -52,7 +52,7 @@ class DataTest {
       phoneNumber: "+243 998466121",
       phoneNumber2: "+243 8418321547",
       canDeliver: true,
-      location: maps.LatLng(-11.628488, 27.483457),
+      location: const maps.LatLng(-11.628488, 27.483457),
     ),
   ];
 

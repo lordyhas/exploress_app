@@ -140,7 +140,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                                 child: Column(
                                                   children: [
                                                     Container(
-                                                      margin: EdgeInsets.all(8.0)
+                                                      margin: const EdgeInsets.all(8.0)
                                                           .copyWith(bottom: 16.0),
                                                       width: (MediaQuery.of(context).size.width) * 0.40,
                                                       height: 150,
@@ -165,7 +165,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                                       child: ListTile(
                                                         title: RichText(
                                                           text: TextSpan(
-                                                              style: TextStyle(
+                                                              style: const TextStyle(
                                                                   color: Colors.black54
                                                               ),
                                                               children: [
@@ -212,7 +212,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                                 //padding: EdgeInsets.only(top: 2.0),
                                                 child: RichText(
                                                   text: TextSpan(
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           color: Colors.black54
                                                       ),
                                                       children: [

@@ -133,10 +133,10 @@ class _AppViewState extends State<AppView> {
           create: (BuildContext context) => ShoppingCartBloc(
             // todo get list from firebase
             ShoppingCartState(List<ReservedProduct>.generate(7,
-                    (i)=> ReservedProduct(
+                    (i) => ReservedProduct(
                         id: i,
                         date: DateTime.now(),
-                        productCode: 'Prod(Ox'+DateTime.now()
+                        productCode: 'Prod(IDx'+DateTime.now()
                             .microsecondsSinceEpoch.toString()+')',
                         shopCode: '',
                         userCode: 'h.kajila@gmail.com',
@@ -247,8 +247,7 @@ class DefaultPage extends StatelessWidget {
             children: [
               const TextSpan(
                 text: "ss",
-                style:
-                TextStyle(color: Colors.deepPurpleAccent),
+                style: TextStyle(color: Colors.deepPurpleAccent),
               )
             ],
           ),
