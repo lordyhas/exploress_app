@@ -1,7 +1,7 @@
 name: exploress
 description: Exploress, marketing and exploration app.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 0.2.23+2
+version: 0.2.23+3
 developer: Hassan Kajila,
 
 environment:
